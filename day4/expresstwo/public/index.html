@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Entry Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <center>
+      <form method="post" action="http://localhost:3000/p_post">
+        <table class="pure-table pure-table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="number"
+                  name="id"
+                  placeholder="Enter Id"
+                  required="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="text"
+                  name="name"
+                  placeholder="Enter Name"
+                  required="true"
+                  max="20"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email"
+                  required="true"
+                  max="50"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="text"
+                  name="mobile"
+                  placeholder="Enter Mobile"
+                  max="10"
+                  required="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="pure-button pure-button-primary"
+                  type="submit"
+                  value="Register"
+                />
+              </td>
+              <td>
+                <input
+                  class="pure-button pure-button-primary"
+                  type="reset"
+                  value="Cancel"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>

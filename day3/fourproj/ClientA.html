@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Client!</title>
+  </head>
+  <body>
+    <div>
+      <h1>
+        <div style="background-color: blue; color: yellow" id="mydiva"></div>
+        <br />
+        <div style="background-color: red; color: yellow" id="mydivb"></div>
+        <br />
+        <div style="background-color: green; color: yellow" id="mydivc"></div>
+        <br />
+        <div style="background-color: gray; color: red" id="mydivd"></div>
+        <br />
+        <div style="background-color: blue; color: yellow" id="mydive"></div>
+        <script>
+          const ws = new WebSocket("ws://localhost:9898");
+          ws.onopen = function () {
+            console.log("Socket Client is now connected!");
+            ws.send("Hi this is browser client!");
+          };
+          var obj;
+          var str = [];
+          ws.onmessage = function (e) {
+            //document.getElementById("mydiv").innerHTML = e.data;
+            var mydivs = ["mydiva", "mydivb", "mydivc", "mydivd", "mydive"];
+            var i = 0;
+            JSON.parse(e.data).forEach((element) => {
+              document.getElementById(mydivs[i]).innerHTML =
+                JSON.stringify(element);
+              i++;
+            });
+          };
+        </script>
+      </h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.save mycode.js
+.load mycode.js
+forin shortcut for for in loop
+forof tab shortcut for of looop
+use remove in case of set/map
+clg for console.log
+
+npm init -y
+npm i express
+npm uninstall express
+npm i nodemon --save-dev
+npm uninstall nodemon 
+

@@ -1,0 +1,12 @@
+mkdir secnode && cd secnode && npm init -y && code .
+npm i esm
+/////
+node -r esm index.js  // esm for react. not using with node
+
+
+// node js will not using import statement
+
+// node js use require statement.
+
+// var is like the global variable and it keeps alive after the loop end.
+// let is like the scope variable and its value died after loop end. 

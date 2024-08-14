@@ -1,0 +1,88 @@
+Notepad link : https://notepad.pw/soprajan24
+
+
+npm i npx
+npx create-react-app myapp
+cd myapp
+code .
+npm start
+
+Node
+WebpackServer
+Babel
+React
+
+Two types of components:
+Functional Components
+	function Mycomp(props) {
+		return <div>
+			<div></div>
+ 		</div>
+	}
+
+Class Components
+	class Mycomp extends React.Component{
+		render(){
+			return(<></>)
+		}
+	}
+
+
+
+state: local variable to your component where you can change it in any of the events or in a life cycle method known as componentDidMount(){}
+
+Mount Phase
+	constructor()
+	getDerivedStateFromProps()
+	render()
+	componentDidMount()
+	
+Update Phase
+	getDerivedStateFromProps()
+	shouldComponentUpdate()
+	render()
+	getSnapShotBeforeUpdate()
+	componentDidUpdate()
+	
+Unmount Phase
+	componentWillUnmount()
+
+
+
+///Portal:
+Fixed window which always appears at the same place irrespective of the size of the browser window
+///Suspence:
+Is a mechanism of handling the delayed results from the api
+///HOC:
+Higher order component is actually function which takes react component as a parameter and returns it back by injecting new props and state into the component
+///reconcilation:
+Technique of synching the real dom with the virtual dom
+...............
+
+install redux, react-redux
+write the reducer
+is to create the store by passing reducer
+write component to send data to store
+
+
+Some Hooks in Reacts
+useRef
+useContext
+useEffect
+useState
+useDispatch
+useSelector
+createStore
+
+
+https://www.transfernow.net/dl/20240125Wp4tt0gq/ttgup0WU
+//////
+https://primereact.org/mention/
+//////
+https://styled-components.com/docs/basics
+////
+
+Selecting from data which is already selected
+reselect 
+Selection from what is already available in the front end is called reselect.
+	

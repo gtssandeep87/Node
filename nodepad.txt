@@ -1,0 +1,3832 @@
+var a = 10;//number
+var b = 'Kali Linux';//string
+var c = true;//boolean
+var d = null;//null
+var e;//undefined
+var f = { id: 1, name: 'Ganesh' };//object
+var g = Symbol('1');//Symbol
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+console.log(typeof d);
+console.log(typeof e);
+console.log(typeof f);
+console.log(typeof g);
+////////////
+type nul> third.js
+/////
+//normal function
+function fa() {
+    console.log("Iam a function");
+}
+fa();
+function fb(a) {
+    console.log(Math.log(a));
+}
+fb(2);
+//Anonymous Function
+const fc = function () {
+    console.log("Iam a function");
+}
+fc();
+//Arrow function
+const fd = () => { console.log("Iam a function"); }
+fd();
+//IIFE=Immediately Instantiable Function Expression
+(
+    function () {
+        console.log("Hai there Iam an IIFE");
+    }
+)();
+(
+    function (a) {
+        console.log(Math.sqrt(a));
+    }
+)(10);
+//Function Constructor
+var ff = new Function('a', 'b', 'c', 'return a+b+c');
+console.log(ff(1, 2, 3));
+//Constructor Function
+function Person(name, email) {
+    this.name = name;
+    this.email = email;
+}
+var pera = new Person('sunil', 'sunil@yahoo.com');
+var perb = new Person('james', 'james@gmail.com');
+console.log(JSON.stringify(pera));
+console.log(JSON.stringify(perb));
+class Cars {
+    constructor(name, brand) {
+        this.name = name;
+        this.brand = brand;
+    }
+}
+var car = new Cars('Octavio', 'Skoda');
+console.log(JSON.stringify(car));
+class A {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+class B extends A {
+    constructor(id, name, email) {
+        super(id, name);
+        this.email = email;
+    }
+}
+const obj = new B(21, 'Sunita', 'sunita@yahoo.com');
+console.log(JSON.stringify(obj));
+class C {
+    _id;
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    _name;
+    get name() {
+        return this._name;
+    }
+    set name(value) {
+        this._name = value;
+    }
+    _email;
+    get email() {
+        return this._email;
+    }
+    set email(value) {
+        this._email = value;
+    }
+}
+
+var cc = new C();
+cc.id = 10;
+cc.name = 'Joyse James';
+cc.email = 'joyse@gmail.com';
+console.log(JSON.stringify(cc));
+console.clear();
+var arr = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+arr.push(10000);//add it to the end
+arr.unshift(1090);//add it to the beginning
+arr.pop();//remove from the end of array
+arr.shift();//remove from the beginning of the array
+// arr.push('Hello');
+console.log(arr);
+for (const key in arr) {
+    console.log(arr[key]);
+}
+for (const i of arr) {
+    console.log(i);
+}
+function prn(a) {
+    console.log(a);
+}
+// arr.forEach(prn);
+// arr.forEach(n => console.log(n));
+arr.map(n => console.log(n));
+// arr.forEach(prn);
+// arr.forEach(n => console.log(n));//loop using a consumer function
+arr.map(n => console.log(n));
+
+let arr2 = [['Albert', 'Einstein'], ['Isaac', 'Newton'], ['Chandrasekhar', 'Raman']];
+// arr2.forEach(n => n.forEach(a => console.log(a)));
+for (const a of arr2) {
+    for (const b of a) {
+        console.log(b);
+    }
+}
+//////////////////
+var seta = new Set();
+var arr = [10, 9, 9, 10, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 66, 6, 6];
+for (const i of arr) {
+    seta.add(i);
+}
+console.log(seta);
+var arra = ['atish', 'Atish'.toLowerCase(), 'atish', 'atish', 'brian', 'brian', 'brian', 'camry', 'david', 'david', 'david'];
+var setb = new Set(arra);
+console.log(setb);
+var map = new Map();
+var arrb = [1, 2, 3, 4, 5];
+var arrc = ['Physics', 'Astro Physics', 'Geo Physics', 'Nuclear Physics', 'Nano Physics'];
+for (let i = 0; i < arrb.length; i++) {
+    map.set(arrb[i], arrc[i]);
+}
+// console.log(map);
+// map.forEach((a, b) => console.log(b + " " + a));
+let mykeys = Array.from(map.keys());
+// mykeys.forEach(n => console.log(n + " " + map.get(n)));
+let vals = Array.from(map.entries());
+// vals.forEach(a => console.log(a));
+// vals.forEach(a => console.log(a[0] + " " + a[1]));
+// vals.map(a => console.log(a[0] + " " + a[1]));
+var valsa = Array.from(map.values());
+valsa.forEach(a => console.log(a));
+////////
+class Employee {
+    constructor(eid, ename, esal, eage) {
+        this.eid = eid;
+        this.ename = ename;
+        this.esal = esal;
+        this.eage = eage;
+    }
+}
+var arr1 = [1, 2, 3, 4, 5];
+var arr2 = ['Andrews', 'Ali', 'Hamid', 'Shen', 'Raymond'];
+var arr3 = [10000, 1200000, 3100000, 2100, 700];
+var arr4 = [21, 33, 17, 45, 54];
+var eArr = [];
+for (let i = 0; i < arr1.length; i++) {
+    var emp = new Employee(arr1[i], arr2[i], arr3[i], arr4[i]);
+    eArr.push(emp);
+}
+//Sorting by age in asc
+//select * from emp order by age 
+// eArr.sort((a, b) => a.eage - b.eage).forEach(n => console.log(JSON.stringify(n)));
+//Sorting by id desc
+//select * from emp order by id desc
+// eArr.sort((a, b) => b.eid - a.eid).forEach(n => console.log(JSON.stringify(n)));
+//Sorting by sal asc
+//select * from emp order by sal
+// eArr.sort((a, b) => a.esal - b.esal).forEach(n => console.log(JSON.stringify(n)));
+//Sorting sal desc
+//select * from emp order by sal desc
+eArr.sort((a, b) => b.esal - a.esal).map(n => console.log(JSON.stringify(n)));
+//Printing annual sal of each emp
+//select (esal*12) as ansal from emp
+eArr.map(n => n.ename + " " + n.esal * 12).forEach(a => console.log(a));
+//Avg age of all emp
+//select avg(a.esal) as a from emp
+var sums = 0.0;
+eArr.map(n => n.eage).forEach(n => sums += n);
+console.log((sums / 5));
+// for (const k in eArr) {
+//     console.log(JSON.stringify(eArr[k]));
+// }
+// for (const i of eArr) {
+//     console.log(JSON.stringify(i));
+// }
+eArr.map(n => console.log(JSON.stringify(n)));
+/////
+var arr = ['Einstein', 'Newton', 'Raman', 'Bohr', 'Aryabhatt'];
+var iter = arr[Symbol.iterator]();
+for (let i = iter.next(); i.done !== true; i = iter.next()) {
+    console.log(i.value);
+}
+var arr2 = [11.3333, 43.444444, 54.555555, 98.44444, 67.3333333];
+var itera = arr2[Symbol.iterator]();
+for (let i = itera.next(); i.done !== true; i = itera.next()) {
+    console.log(i.value);
+}
+class Employee {
+    constructor(eid, ename, esal, eage) {
+        this.eid = eid;
+        this.ename = ename;
+        this.esal = esal;
+        this.eage = eage;
+    }
+}
+var arr1 = [1, 2, 3, 4, 5];
+var arr2 = ['Andrews', 'Ali', 'Hamid', 'Shen', 'Raymond'];
+var arr3 = [10000, 1200000, 3100000, 2100, 700];
+var arr4 = [21, 33, 17, 45, 54];
+var eArr = [];
+for (let i = 0; i < arr1.length; i++) {
+    var emp = new Employee(arr1[i], arr2[i], arr3[i], arr4[i]);
+    eArr.push(emp);
+}
+var eIter = eArr[Symbol.iterator]();
+for (let i = eIter.next(); i.done !== true; i = eIter.next()) {
+    console.log(JSON.stringify(i.value));
+}
+var arr3 = [true, false, true, false, true, true, false];
+var iterc = arr3[Symbol.iterator]();
+for (let i = iterc.next(); i.done !== true; i = iterc.next()) {
+    console.log(JSON.stringify(i.value));
+}
+//////
+var aa = [{ "eid": 3, "ename": "Hamid", "esal": 3100000, "eage": 17 },
+{ "eid": 2, "ename": "Ali", "esal": 1200000, "eage": 33 },
+{ "eid": 1, "ename": "Andrews", "esal": 10000, "eage": 21 },
+{ "eid": 4, "ename": "Shen", "esal": 2100, "eage": 45 },
+{ "eid": 5, "ename": "Raymond", "esal": 700, "eage": 54 }];
+
+var iterd = aa[Symbol.iterator]();
+for (let i = iterd.next(); i.done !== true; i = iterd.next()) {
+    console.log(i.value);
+}
+
+var itere = [{ "eid": 3, "ename": "Hamid", "esal": 3100000, "eage": 17 },
+{ "eid": 2, "ename": "Ali", "esal": 1200000, "eage": 33 },
+{ "eid": 1, "ename": "Andrews", "esal": 10000, "eage": 21 },
+{ "eid": 4, "ename": "Shen", "esal": 2100, "eage": 45 },
+{ "eid": 5, "ename": "Raymond", "esal": 700, "eage": 54 }][Symbol.iterator]();
+for (let i = itere.next(); i.done !== true; i = itere.next()) {
+    console.log(i.value.ename);
+}
+/////
+//Currying
+function calVol(l) {
+    return function (b) {
+        return function (h) {
+            return l * b * h;
+        }
+    }
+}
+/*
+const calVol = (l) => {
+    return (b) => {
+        return (h) => {
+            return l * b * h;
+        }
+    }
+}
+*/
+var c = calVol(1);
+for (let o = 0; o < 10; o++) {
+    console.log("****" + o);
+}
+var d = c(2);
+for (let o = 0; o < 10; o++) {
+    console.log("^^^^^" + o);
+}
+var e = d(3);
+console.log(e);
+//////////
+var cc=calVol(1)(2)(3);
+// console.log(cc);
+///////////////////
+function* MyGen() {
+    yield "First";
+    yield "Second";
+    yield "Third";
+    yield "Fourth";
+    yield "Fifth";
+    yield "Sixth";
+}
+
+let myGen = MyGen();
+for (let i = myGen.next(); i.done !== true; i = myGen.next()) {
+    console.log(i.value);
+}
+let n = 1;
+function* NGen(a) {
+    while (n < a) {
+        yield "Sqrt(" + n + ")=" + Math.sqrt(n);
+        n++;
+    }
+}
+let nGen = NGen(11);
+for (let i = nGen.next(); i.done !== true; i = nGen.next()) {
+    console.log(i.value);
+}
+console.clear();
+function myfun(...a) {//rest params
+    let b = [...a];//Spread operator
+    b.forEach(n => console.log(n));
+}
+myfun(1, 2, 3, 4, 5, 6, 7, 8, 9);
+console.log("*".repeat(10));
+myfun(11, 12);
+console.log("*".repeat(10));
+myfun(31, 43, 54, 65);
+//////////////
+npm init -y
+/////////
+npm i express
+npm uninstall express
+npm i nodemon --save-dev
+npm uninstall nodemon
+/////////////
+/**
+ * Module imports
+ */
+//#region 
+const moda = require('./moda');
+const modb = require('./modb');
+const modc = require('./modc');
+const modd = require('./modd');
+const Mode = require('./mode');
+const modf = require("./modf");
+const modg = require('./modg');
+const mode = new Mode.mode();
+//#endregion
+
+/**
+ * Basic module imports
+ */
+//#region 
+console.log(moda.aa);
+console.log(modb.ffa(21));
+console.log(modc.ffb());
+console.log(modd.ffc('Parmesan and white bread go very well with each other'));
+//#endregion
+/**
+ * Multi function module imports and class, constructor function
+ */
+//#region 
+mode.first();
+mode.sec();
+mode.third();
+mode.fourth();
+const obj = new modf.Person('Mark Strongford', 'mark@yahoo.com');
+console.log(JSON.stringify(obj));
+const obja = new modg.Books('Adventures of tom sawyer', 'Mark Twain');
+console.log(JSON.stringify(obja));
+//#endregion
+////////
+module.exports.aa = "This is a string from other module";
+/////////
+function ffa(a) {
+    return Math.sqrt(a);
+}
+module.exports.ffa = ffa;
+////////
+const ffb = function () {
+    return "Ahura Mazda is the holy book of Judaists";
+}
+
+module.exports.ffb = ffb;
+/////////
+const ffc = (a) => {
+    return a.toUpperCase();
+}
+module.exports.ffc = ffc;
+///////
+module.exports.mode = function () {
+    this.first = function () {
+        console.log("First Function");
+    },
+        this.sec = function () {
+            console.log("Second Function");
+        },
+        this.third = function () {
+            console.log("Third Function");
+        },
+        this.fourth = () => {
+            console.log("Fifth Function");
+        }
+}
+////
+class Person {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+
+module.exports.Person = Person;
+/////
+function Books(name, auth) {
+    this.name = name;
+    this.auth = auth;
+}
+module.exports.Books = Books;
+////////////19-01-2024////////
+mkdir secnode && cd secnode && npm init -y && code .
+npm i esm
+/////
+node -r esm index.js
+////
+function first() {
+    console.log("First Function");
+}
+
+export default first;
+
+export const str = "This is an exported String";
+///////
+class Person {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+export default Person;
+//////
+export const second = function () {
+    console.log("Second anon function");
+}
+
+export const third = () => {
+    console.log("Arrow function");
+}
+
+export function fourth() {
+    console.log("Fourth Function");
+}
+export function fifth() {
+    console.log("Fifth Function");
+}
+////////
+import first, { str } from "./moda";
+import Person from "./modb";
+import { second, third, fourth, fifth } from "./modc";
+
+first();
+let obj = new Person('Hamid', 'hamid@yahoo.com');
+console.log(JSON.stringify(obj));
+second();
+third();
+console.log(str);
+fourth();
+fifth();
+///////////
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+var listener1 = function listener1() {
+    console.log("Listener1 Executed!");
+}
+var listener2 = function listener2() {
+    console.log("Listener2 Executed!");
+}
+// eventEmitter.addListener("conn", listener1);
+// eventEmitter.addListener("conn", listener2);
+eventEmitter.on("conn", listener1);
+eventEmitter.on("conn", listener2);
+eventEmitter.removeListener("conn", listener1);
+eventEmitter.emit("conn");
+//////////
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+var listenera = function listenera() {
+    console.log("Listenera Executed!");
+}
+var listenerb = function listenerb() {
+    console.log("Listenerb Executed!");
+}
+var listenerc = function listenerc() {
+    console.log("Listenerc Executed!");
+}
+var listenerd = function listenerd() {
+    console.log("Listenerd Executed!");
+}
+var listenere = function listenere() {
+    console.log("Listenere Executed!");
+}
+
+var liArr = [];
+liArr.push(listenera);
+liArr.push(listenerb);
+liArr.push(listenerc);
+liArr.push(listenerd);
+liArr.push(listenere);
+const eve = "myeve";
+liArr.forEach(n => {
+    if (n.name === 'listenerb' || n.name === 'listenerc')
+        eventEmitter.addListener(eve, n);
+});
+eventEmitter.emit(eve);
+/////////
+node --no-deprecation third.js
+///
+var bufa = new Buffer(10);
+var bufb = new Buffer([2, 3, 4, 5]);
+var bufc = new Buffer("Test", "utf-8");
+var bufd = new Buffer(10);
+var len = bufd.write("Tester");
+console.log("Objects written to buffer", len);
+console.log(bufd.toString());
+console.log(bufd.toJSON());
+var bufe = new Buffer(26);
+var str = "";
+for (let i = 0; i < 26; i++) {
+    str += String.fromCharCode(i + 97);
+}
+bufe.write(str);//write
+console.log(bufe.toString('utf-8'));//read
+console.log(bufe.toString('ascii', 0, 6));//read
+var t = bufe.toJSON(bufe);
+// console.log(t);
+////////////
+var bufa = new Buffer(10);
+var bufb = new Buffer([2, 3, 4, 5]);
+var bufc = new Buffer("Test", "utf-8");
+var bufd = new Buffer(10);
+var len = bufd.write("Tester");
+console.log("Objects written to buffer", len);
+console.log(bufd.toString());
+console.log(bufd.toJSON());
+var bufe = new Buffer(26);
+var str = "";
+for (let i = 0; i < 26; i++) {
+    str += String.fromCharCode(i + 97);
+}
+bufe.write(str);//write
+console.log(bufe.toString('utf-8'));//read
+console.log(bufe.toString('ascii', 0, 6));//read
+// var t = bufe.toJSON(bufe);
+// console.log(t);
+//Concatenating Buffers
+var bufp = new Buffer("Test1");
+var bufq = new Buffer("Test2");
+var bufr = Buffer.concat([bufp, bufq]);
+console.log(bufr.toString('utf-8'));
+//Copy Buffers
+var bufs = new Buffer("SATISH");
+var buft = new Buffer(6);
+bufs.copy(buft);
+console.log(bufs.toString('ascii'));
+//Slice buffers
+var bufu = new Buffer("My Table");
+var bufv = bufu.slice(0, 5);
+console.log(bufv.toString('ascii'));
+console.log(bufv.length);
+////
+const { Readable } = require('stream');
+async function* gen() {
+    yield "First";
+    yield "Second";
+    yield "Third";
+    yield "Fourth";
+    yield "Fifth";
+}
+
+const readable = Readable.from(gen());
+readable.on("data", (c) => console.log(c));
+/////
+//Non Blocking Mode
+var fs = require('fs');
+var data = "";
+var fiName = "C:\\DelhiOfficeFiles\\data.txt";
+var rs = fs.createReadStream(fiName);
+rs.setEncoding("utf-8");
+rs.on('data', (chunk) => {
+    data += chunk;
+});
+rs.on("end", function () {
+    console.log(data);
+});
+rs.on("error", (e) => {
+    console.log(e.stack);
+});
+console.log("Program Ended");
+/////////
+var fs = require("fs");
+var data = "";
+var fiName = "C:\\DelhiOfficeFiles\\sopradata1.txt";
+for (let i = 1; i <= 1000; i++) {
+    data += "Sqrt(" + i + ")=" + Math.sqrt(i) + ";";
+}
+var ws = fs.createWriteStream(fiName);
+ws.write(data, 'utf-8');
+ws.end();
+ws.on('finish', function () {
+    console.log("Write Op Complete");
+});
+ws.on('error', function (e) {
+    console.log(e);
+});
+console.log("Write Completed!");
+
+/////////////
+var fs = require('fs');
+var fiName = "C:\\DelhiOfficeFiles\\sopradata2.csv";
+var fiNamea = "C:\\DelhiOfficeFiles\\sopradata2a.csv";
+var rs = fs.createReadStream(fiName);
+var ws = fs.createWriteStream(fiNamea);
+rs.pipe(ws);
+console.log("Finished Piping!");
+/////
+var fs = require('fs');
+var zlib = require('zlib');
+var fiName = "C:\\DelhiOfficeFiles\\sopradata2.csv";
+var targ = "C:\\DelhiOfficeFiles\\sopradata2.csv.gz";
+fs.createReadStream(fiName)
+    .pipe(zlib.createGzip())
+    .pipe(fs.createWriteStream(targ));
+console.log("File zipped!");
+/////////
+var fs = require('fs');
+var fiName = "C:\\DelhiOfficeFiles\\MyTestDirA\\afile.txt";
+//fs.mkdir(fiName, () => { });
+// var fiNamea = "C:\\DelhiOfficeFiles\\MyTestDirB";
+// fs.rename(fiName, fiNamea, () => { });
+// fs.rmdir(fiNamea, () => { });
+// fs.createWriteStream(fiName);
+// var fiNameb = "C:\\DelhiOfficeFiles\\MyTestDirA\\bfile.txt";
+// fs.rename(fiName, fiNameb, () => { });
+// fs.rm(fiNameb, () => { });
+// var fiNamec = "C:\\DelhiOfficeFiles\\MyTestDirA\\acfile.pptx";
+// fs.createWriteStream(fiNamec);
+var ls = fs.readdirSync("c:\\delhiofficefiles\\");
+//only listing dirs
+ls.forEach(n => {
+    if (n.indexOf(".") > 0) { } else {
+        console.log(n);
+    }
+});
+
+/////////
+//process constants
+console.log(`${process.arch}`);
+console.log(`${process.pid}`);
+console.log(`${process.platform}`);
+console.log(`${process.version}`);
+//process functions
+console.log(process.cwd());
+console.log(process.hrtime());
+console.log(process.memoryUsage());
+console.log(process.uptime());
+process.argv.forEach((value, index, array) => {
+    console.log(`${index}:${value}`);
+});
+console.log(__dirname);
+/////
+npm i child_process
+/////
+const exec = require('child_process').exec;
+exec('C:\\Users\\Satish\\sopra18012024\\nodeprojs\\thirdproj\\mytest.bat',
+    (err, stdout, stdin) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(stdout);
+    }
+);
+///mytest.bat//////
+dir
+mkdir satish
+/////
+const exec = require('child_process').exec;
+exec('calc',
+    (err, stdout, stdin) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(stdout);
+    }
+);
+/////
+var fs = require("fs");
+const { stdout, stdin } = require("process");
+var exec = require('child_process').exec;
+const pp = "C:\\delhiofficefiles\\atesta.txt";
+var ws = fs.createWriteStream(pp);
+var cont = "This is test file to be written from nodejs";
+ws.write(cont);
+exec("notepad " + pp, (err, stdout, stdin) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(stdout);
+});
+////////
+class Cars {
+    constructor(id, name, brand) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+    }
+}
+
+module.exports.Cars = Cars;
+/////
+const { Cars } = require("./Cars");
+
+function retList() {
+    var myArr = [];
+    var arr0 = [1010, 2010, 3010, 4010, 5010];
+    var arr1 = ['Octavios', 'Nexusa', 'Puntos', 'EClasses', 'Lilacs'];
+    var arr2 = ['Skodas', 'Lexuses', 'Fiats', 'Mercedeses', 'Cadillacs'];
+    for (let i = 0; i < arr1.length; i++) {
+        var car = new Cars(arr0[i], arr1[i], arr2[i]);
+        myArr.push(car);
+    }
+    return myArr;
+}
+
+module.exports.retList = retList;
+////
+var fs = require('fs');
+const { retList } = require('./mylist');
+var exec = require('child_process').exec;
+exec('code ' + "c:\\delhiofficefiles\\mycarsdata.json", (err, stdout, stdin) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(stdout);
+});
+
+function extFun() {
+    var ws = fs.createWriteStream("c:\\delhiofficefiles\\mycarsdata.json");
+    const str = JSON.stringify(retList());
+    ws.write(str, 'ascii', () => { });
+    ws.end();
+    ws.on('finish', function () {
+        console.log("Done writing to disk!");
+    });
+    ws.on('error', function (e) {
+        console.log(e);
+    });
+}
+
+//////////
+var fs = require('fs');
+const { retList } = require('./mylist');
+var exec = require('child_process').exec;
+
+
+function runFun() {
+    exec('code ' + "c:\\delhiofficefiles\\mycarsdata.json", (err, stdout, stdin) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(stdout);
+    });
+}
+
+function extFun() {
+    var ws = fs.createWriteStream("c:\\delhiofficefiles\\mycarsdata.json");
+    const str = JSON.stringify(retList());
+    ws.write(str, 'ascii', () => { });
+    ws.end();
+    ws.on('finish', function () {
+        console.log("Done writing to disk!");
+    });
+    ws.on('error', function (e) {
+        console.log(e);
+    });
+}
+
+/////////
+Day 1
+• Introduction to Node.js o History of Node.js
+• Non-Blocking, I/O
+• Node.js Benefits
+• Node.js Place in the Tech Stack
+• Evolution of Node.js Frameworks
+• Installing Node.js
+• Nodejs Building Blocks
+• Modularizing code o Core built-in modules
+• Creating Node Modules
+• Modularizing JavaScirpt code
+• Using require () to modularize application code.
+• Events and Streams of Understanding Events
+Day 2
+• Event Emitter class
+• File System Access
+• Reading and writing to files
+• Understanding Streams
+• Reading and writing streams
+• Using pipe ()
+• Accessing Local Resources 
+o Process Object
+• Manipulating File System
+• Understanding Buffers
+Day 3
+• Node.js and the web 
+o Building a web server.
+• Handling web requests
+• Returning HTML
+• Socket IO - Setting up socket.io
+• Understanding the need for web sockets
+• Real-time interaction using socket.io.
+• Using Some Node Tools and Middleware 
+o Serving HTML Pages.
+• Serving Static Contents
+• Bundling Static Contents 
+Day 4
+• Installing Express.js
+• Routing
+• Parameters and queries in routing
+• Building views using Jade view engine
+• Using blocks for layout
+• Displaying data
+• Working with forms
+• Installing Express Generator
+• Creating Express App using Generator
+• Building web applications using Express.js
+Day 5
+· Introduction & Agenda
+· HOC – Higher Order Components
+· Project management board with Suspense
+· Pure Components, Class Components and Functional Components:
+· Understanding the different types of components:
+· Understanding Stateless components
+· Understanding Stateful components
+· Creating a Stateful component
+· Understanding the Class,Import,Render & Props
+· Adding State data
+· Avoiding the state data modification pitfalls
+· Defining stateful components using Hooks
+· Lifting up state data
+· Suspense - Introduction
+· Bootstrapping our app
+· Handling data flow
+· Loading & Displaying data
+Day 6
+· Creating HOC
+· Using the HOC
+· Using Refs & Portals
+· Hooks
+· Reconciliation and Lifecycles aka React Hooks
+· Creating the Components
+· How Content Is Rendered
+· Update Phase
+· Unmounting Phase
+· Using the Effect Hook
+· Using the Advanced Lifecycle Methods
+· Preventing Unnecessary Component Updates
+· Setting State Data from Prop Values
+· React Reselect
+· Introduction
+· Working with Selectors 
+· Context API
+· Shopping List using Context API & Hooks:
+· Context API - Introduction
+· State management with Context API
+· Creating & Nesting Context
+· Using Lifecycle with functional component
+////////////////
+const { StringDecoder } = require('string_decoder');
+const q = require('querystring');
+const decoder = new StringDecoder('utf-8');
+const buf = new Buffer('This is my buffer');
+console.log(decoder.write(buf));
+const bufa = new Buffer('736174697368', 'hex');
+console.log(decoder.write(bufa));
+const obj = q.parse("name=satish&com=linux&comp=Lenova");
+console.log(obj.name + " " + obj.com + " " + obj.comp);
+////////////
+>npm i string_decoder
+/////////22jan2024/////////////////////////////////////////////////////
+var http = require('http');
+const { retList } = require('./mylist');
+
+var server = http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'text/html' });
+    res.write("<h1 style=\"background-color:red;color:yellow\">Welcome to NodeJS HTTP Server!</h1><br/>");
+    res.write("<h1 style=\"background-color:yellow;color:red\">Another statement!</h1>");
+    res.write("<center><table border=1><thead><tr><th>ID</th><th>Name</th><th>Brand</th></tr></thead><tbody>");
+    let arr = retList();
+    for (let i = 0; i < arr.length; i++) {
+        res.write("<tr><td>" + arr[i].id + "</td><td>" + arr[i].name + "</td><td>" + arr[i].brand + "</td></tr>");
+    }
+    res.write("</table></center>");
+    res.end("");
+});
+
+server.listen(3000, () => {
+    console.log("Server Running!");
+});
+/////
+var http = require('http');
+
+var app = http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'text/html' });
+    if (req.url == '/form') {
+        res.write("<form action=\"./sub\" method=post><table><tr><td>Email</td><td><input type=text name=uname /></td></tr><tr><td>Password</td><td><input type=password name=password /></td></tr><tr><td><input type=submit value=Send /></td><td><input type=reset value=Cancel /></td></tr></table></form>");
+        res.end("");
+    }
+    if (req.url == '/sub') {
+        console.log("Form Submitted!");
+    }
+});
+
+app.listen(3000, () => {
+    console.log("Server is running!");
+})
+/////
+var http = require('http');
+var menu = "<br/><hr/><br/><table><tr><td><a href=\"./\">Home Page</a></td><td><a href=\"./about\">About Us Page</a></td><td><a href=\"./contact\">Contact Us Page</a></td><td><a href=\"./project\">Projects Page</a></td></tr></table><br/><hr/><br/>";
+var server = http.createServer((req, res) => {
+    if (req.url == "/") {
+        res.write(menu + "<h1 style=\"background-color:red;color:yellow\">"
+            + "Welcome to home page of our website!</h1><br/><div>This is home page of our web site. We are into manufacturing of vaults...</div>");
+        res.end();
+    }
+    if (req.url == "/about") {
+        res.write(menu + "<h1 style=\"background-color:red;color:yellow\">Welcome to about us page of our website!</h1><div>Manyg=facturing is an art and we have innovated it by introducing cut throat technologies into our portals..</div>");
+        res.end();
+    }
+    if (req.url == "/contact") {
+        res.write(menu + "<h1 style=\"background-color:red;color:yellow\">Welcome to contact us page of our website!</h1><div>You can contact us through several means...<address>West Street, East Brunswick, NJ, USA</address></div>");
+        res.end();
+    }
+    if (req.url == "/project") {
+        res.write(menu + "<h1 style=\"background-color:red;color:yellow\">Welcome to projects page of our website!</h1><div>Our list of project include both domestic and interntional here is a list of our clients!</div>");
+        res.end();
+    }
+});
+
+server.listen(3000, () => {
+    console.log("Server is running!");
+});
+//////
+var http = require('http');
+const { retList } = require('./mylist');
+
+var server = http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'text/json' });
+    if (req.url === "/first" && req.method === "GET") {
+        var arr = retList();
+        res.write(JSON.stringify(arr));
+        res.end();
+    }
+    if (req.url === "/sec" && req.method === "POST") {
+        var obj = { name: "Post Request", val: "Some value for post" };
+        res.write(JSON.stringify(obj));
+        res.end();
+    }
+    if (req.url === "/third" && req.method === "PUT") {
+        var obj = { name: "Put Request", val: "Some value for put" };
+        res.write(JSON.stringify(obj));
+        res.end();
+    }
+    if (req.url === "/four" && req.method === "DELETE") {
+        var obj = { name: "Delete Request", val: "Some valu for delete" };
+        res.write(JSON.stringify(obj));
+        res.end();
+    }
+});
+
+server.listen(3000, () => {
+    console.log("Server is running");
+
+})
+///////////
+https://microsoftedge.microsoft.com/addons/detail/boomerang-soap-rest-c/bhmdjpobkcdcompmlhiigoidknlgghfo
+//////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First</title>
+  </head>
+  <body>
+    <h1 style="background-color: aqua; color: rebeccapurple">
+      Welcome to first page being served from file server!
+    </h1>
+  </body>
+</html>
+/////////////
+npm i finalhandler
+npm i serve-static
+////////
+var http = require('http');
+var finalHandler = require('finalhandler');
+var serveStatic = require('serve-static');
+
+var serve = serveStatic('./public');
+var server = http.createServer(function (req, res) {
+    var done = finalHandler(req, res);
+    serve(req, res, done);
+});
+server.listen(3000, () => {
+    console.log("File Server is running");
+});
+///////////////////////
+npm i browser-sync -g
+npm i -g http-server
+/////////
+browser-sync start --server --port=3001 --files="./public"
+////////////
+npm i hostr -g
+//////////
+const net = require('net');
+const server = net.createServer((socket) => {
+    socket.on('data', (data) => {
+        console.log(data.toString());
+    });
+    socket.write("Server: Sending hai to client!");
+    socket.end("Server Closing Connection!");
+}).on('error', (err) => {
+    console.log(err);
+});
+server.listen(9898, () => {
+    console.log("Opened The Server!");
+});
+//////
+const net = require('net');
+const client = net.createConnection({ port: 9898 }, () => {
+    console.log("CLIENT:Connected to server");
+    client.write("Hello Server Client this side");
+});
+client.on('data', (data) => {
+    console.log(data.toString());
+    client.end();
+});
+client.on('end', () => {
+    console.log("Disconnected!");
+});
+/////////
+class Books {
+    constructor(name, auth) {
+        this.name = name;
+        this.auth = auth;
+    }
+}
+module.exports.Books = Books;
+/////////
+const { Books } = require("./Books");
+
+const creaList = function () {
+    var arr = [];
+    var arr1 = ['Ramayan', 'Mahabharat', 'Kane And Abel', 'Pelican Brief', 'Adventures of tom sawyer'];
+    var arr2 = ['Valmiki', 'Vyas', 'J Archer', 'John Grisham', 'Mark Twain'];
+    for (let i = 0; i < arr1.length; i++) {
+        var book = new Books(arr1[i], arr2[i]);
+        arr.push(book);
+    }
+    return arr;
+}
+
+module.exports.creaList = creaList;
+/////////
+const net = require('net');
+const { creaList } = require('./lbooks');
+const server = net.createServer((socket) => {
+    socket.on('data', (data) => {
+        console.log(data.toString());
+    });
+    // socket.write("Server: Sending hai to client!");
+    // socket.end("Server Closing Connection!");
+    creaList().forEach(n => {
+        setTimeout(() => {
+            socket.write(JSON.stringify(n));
+        }, 3000);
+    });
+}).on('error', (err) => {
+    console.log(err);
+});
+server.listen(9898, () => {
+    console.log("Opened The Server!");
+});
+//////////
+const net = require('net');
+const client = net.createConnection({ port: 9898 }, () => {
+    console.log("CLIENT:Connected to server");
+    client.write("Hello Server Client this side");
+});
+client.on('data', (data) => {
+    console.log(data.toString());
+    client.write("Finished Recieving data thanks....!");
+    // client.end();
+});
+client.on('end', () => {
+    console.log("Disconnected!");
+});
+///////////
+npm i websocket
+//////////
+const http = require('http');
+const { creaList } = require('./lbooks');
+const WebSocketServer = require('websocket').server;
+const server = http.createServer();
+server.listen(9898);
+const wsServer = new WebSocketServer(
+    { httpServer: server }
+);
+wsServer.on('request', function (request) {
+    const connection = request.accept(null, request.origin);
+    connection.on('message', function (m) {
+        console.log("Recieved message ", m.utf8Data);
+        //connection.sendUTF("Hit this is from socket Server of NodeJS");
+        var a = creaList();
+        connection.sendUTF(JSON.stringify(a));
+   });
+    connection.on("close", function (r, d) {
+        console.log("Client Diconnected!");
+    });
+});
+////////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Client!</title>
+  </head>
+  <body>
+    <div>
+      <h1>
+        <div style="background-color: blue; color: yellow" id="mydiva"></div>
+        <br />
+        <div style="background-color: red; color: yellow" id="mydivb"></div>
+        <br />
+        <div style="background-color: green; color: yellow" id="mydivc"></div>
+        <br />
+        <div style="background-color: gray; color: red" id="mydivd"></div>
+        <br />
+        <div style="background-color: blue; color: yellow" id="mydive"></div>
+        <script>
+          const ws = new WebSocket("ws://localhost:9898");
+          ws.onopen = function () {
+            console.log("Socket Client is now connected!");
+            ws.send("Hi this is browser client!");
+          };
+          var obj;
+          var str = [];
+          ws.onmessage = function (e) {
+            //document.getElementById("mydiv").innerHTML = e.data;
+            var mydivs = ["mydiva", "mydivb", "mydivc", "mydivd", "mydive"];
+            var i = 0;
+            JSON.parse(e.data).forEach((element) => {
+              document.getElementById(mydivs[i]).innerHTML =
+                JSON.stringify(element);
+              i++;
+            });
+          };
+        </script>
+      </h1>
+    </div>
+  </body>
+</html>
+/////////
+23/01/2024
+////////
+npm init -y
+////
+npm i express
+//////
+npm i nodemon -g
+/////////
+nodemon App.js
+//////
+var express = require('express');
+var app = express();
+app.get("/a", function (req, res) {
+    res.send("Coming from Get");
+});
+app.post("/b", function (req, res) {
+    res.send("Coming from Post");
+});
+app.put("/c", function (req, res) {
+    res.send("Coming from Put");
+});
+app.delete("/d", function (req, res) {
+    res.send("Coming from Delete");
+});
+
+app.listen(3000, () => {
+    console.log("Express App Is Running!");
+});
+////////
+var express = require('express');
+var app = express();
+app.get("/a", function (req, res) {
+    res.send("Coming from Get");
+});
+app.post("/b", function (req, res) {
+    res.send("Coming from Post");
+});
+app.put("/c", function (req, res) {
+    res.send("Coming from Put");
+});
+app.delete("/d", function (req, res) {
+    res.send("Coming from Delete");
+});
+
+app.listen(3000, () => {
+    console.log("Express App Is Running!");
+});
+//////////
+var express = require('express');
+var app = express();
+var menu = "<br/><table border=1><tr><td><a href=\"./home\">Home</a></td><td><a href=\"./about\">About Us</a></td><td><a href=\"./contact\">Contact Us</a></td><td><a href=\"./projects\">Projects</a></td></tr></table><br/>";
+app.get("/home", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Home Page Of The Web Site!</h1>");
+});
+app.get("/about", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">About Us Page Of The Web Site!</h1>");
+});
+app.get("/contact", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Contact Us Page Of The Web Site!</h1>");
+});
+app.get("/projects", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Projects Page Of The Web Site!</h1>");
+});
+app.listen(3000, () => {
+    console.log("Express Is Up!");
+});
+////////////
+class Books {
+    constructor(bname, bauth) {
+        this.bname = bname;
+        this.bauth = bauth;
+    }
+}
+
+export default Books;
+/////
+class Books {
+    constructor(bname, bauth) {
+        this.bname = bname;
+        this.bauth = bauth;
+    }
+}
+
+module.exports.Books = Books;
+///////
+const { Books } = require("./Books");
+
+const retList = function () {
+    var arr1 = ['Ramayan', 'Mahabharat', 'Sakuntalam', 'War And Peace', 'Quiet Flows Of Don'];
+    var arr2 = ['Valmiki', 'Vyas', 'Kalidasa', 'Tolstoy', 'Sholkov Mikhail'];
+    var aBooks = [];
+    for (let i = 0; i < arr1.length; i++) {
+        let book = new Books(arr1[i], arr2[i]);
+        aBooks.push(book);
+    }
+    return aBooks;
+}
+
+module.exports.retList = retList;
+
+//////
+var express = require('express');
+const { retList } = require('./lbook');
+var app = express();
+var menu = "<br/><table border=1><tr><td><a href=\"./home\">Home</a></td><td><a href=\"./about\">About Us</a></td><td><a href=\"./contact\">Contact Us</a></td><td><a href=\"./projects\">Projects</a></td></tr></table><br/>";
+app.get("/home", (req, res) => {
+    var str = '<center><table border=1><thead><tr><th>Name</th><th>Author</th></tr></thead><tbody>';
+    let arr = retList();
+    for (let i = 0; i < arr.length; i++) {
+        str += "<tr><td>" + arr[i].bname + "</td><td>" + arr[i].bauth + "</td></tr>";
+    }
+    str += "</tbody></table>"
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Home Page Of The Web Site!</h1><br/><hr/><br/>" + str);
+});
+app.get("/about", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">About Us Page Of The Web Site!</h1>");
+});
+app.get("/contact", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Contact Us Page Of The Web Site!</h1>");
+});
+app.get("/projects", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Projects Page Of The Web Site!</h1>");
+});
+app.listen(3000, () => {
+    console.log("Express Is Up!");
+});
+///////
+var express = require('express');
+const { retList } = require('./lbook');
+const { Books } = require('./Books');
+var app = express();
+var menu = "<br/><table border=1><tr><td><a href=\"./home\">Home</a></td><td><a href=\"./about\">About Us</a></td><td><a href=\"./contact\">Contact Us</a></td><td><a href=\"./projects\">Projects</a></td></tr></table><br/>";
+app.get("/home", (req, res) => {
+    var str = '<center><table border=1><thead><tr><th>Name</th><th>Author</th></tr></thead><tbody>';
+    let arr = retList();
+    for (let i = 0; i < arr.length; i++) {
+        str += "<tr><td>" + arr[i].bname + "</td><td>" + arr[i].bauth + "</td></tr>";
+    }
+    str += "</tbody></table>"
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Home Page Of The Web Site!</h1><br/><h1>List Of Books I Own</h1><br/>" + str);
+});
+app.get("/about", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">About Us Page Of The Web Site!</h1>");
+});
+app.get("/contact", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Contact Us Page Of The Web Site!</h1>");
+});
+app.get("/projects", (req, res) => {
+    res.send(menu + "<h1 style=\"background-color:yellow;color:red\">Projects Page Of The Web Site!</h1>");
+});
+var a = retList();
+//Capturing path params
+app.get("/add/:bname/:bauth", function (req, res) {
+    var bname = req.params.bname;
+    var bauth = req.params.bauth;
+    var book = new Books(bname, bauth);
+    console.log(JSON.stringify(book));
+    a.push(book);
+    res.send(JSON.stringify(a));
+});
+
+app.get("/forma", function (req, res) {
+    res.send("<form action=./test>Name:<input type=text name=name />Author:<input type=text name=name /><input type=submit value=send /></form>")
+});
+
+//Capturing a query string
+app.get("/test", function (req, res) {
+    var aa = req.query;
+    var book = new Books(aa.name, aa.auth);
+    a.push(book);
+    res.send(JSON.stringify(a));
+});
+
+app.listen(3000, () => {
+    console.log("Express Is Up!");
+});
+////////////
+mkdir expresstwo && cd expresstwo && npm init -y
+/////////
+npm i body-parser
+//////
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+/////////////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Form</title>
+  </head>
+  <body>
+    <form action="http://localhost:3000/p_post">
+      <center>
+        <table class="pure-table pure-table-striped">
+          <thead>
+            <th></th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input type="email" name="email" placeholder="Enter Email" />
+              </td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="submit"
+                  value="Save"
+                  class="pure-button pure-button-primary"
+                />
+              </td>
+              <td>
+                <input
+                  type="reset"
+                  value="Cancel"
+                  class="pure-button pure-button-primary"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </form>
+  </body>
+</html>
+/////////////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Form</title>
+  </head>
+  <body>
+    <form method="post" action="http://localhost:3000/p_post">
+      <center>
+        <table class="pure-table pure-table-striped">
+          <thead>
+            <th></th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input type="email" name="email" placeholder="Enter Email" />
+              </td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="submit"
+                  value="Save"
+                  class="pure-button pure-button-primary"
+                />
+              </td>
+              <td>
+                <input
+                  type="reset"
+                  value="Cancel"
+                  class="pure-button pure-button-primary"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </form>
+  </body>
+</html>
+////////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static("./public"));
+app.get("/first.html", function (req, res) {
+    res.sendFile(__dirname + "/public/first.html");
+});
+app.post("/p_post", urlEncodedBodyParser, function (req, res) {
+    var respo = {
+        email: req.body.email,
+        password: req.body.password
+    }
+    console.log(JSON.stringify(respo));
+    res.send(JSON.stringify(respo));
+});
+app.listen(3000, () => {
+    console.log("Form Server Is Up");
+});
+//////////
+https://purecss.io/forms/
+////////
+function Register(id, name, email, mobile) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.mobile = mobile;
+}
+
+
+module.exports.Register = Register;
+////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+const { Register } = require('./Register');
+var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static("./public"));
+app.get("/index.html", function (req, res) {
+    res.sendFile(__dirname + "./public/index.html");
+});
+app.post("/p_post", urlEncodedBodyParser, function (req, res) {
+    var id = Number.parseInt(req.body.id);
+    var name = req.body.name;
+    var email = req.body.email;
+    var mobile = req.body.mobile;
+    var regist = new Register(id, name, email, mobile);
+    var a = JSON.stringify(regist);
+    res.send(a);
+});
+
+app.listen(3000, () => {
+    console.log("Form Server Is Up");
+});
+/////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Entry Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <center>
+      <form method="post" action="http://localhost:3000/p_post">
+        <table class="pure-table pure-table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="number"
+                  name="id"
+                  placeholder="Enter Id"
+                  required="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="text"
+                  name="name"
+                  placeholder="Enter Name"
+                  required="true"
+                  max="20"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email"
+                  required="true"
+                  max="50"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>
+                <input
+                  class="pure-text"
+                  type="text"
+                  name="mobile"
+                  placeholder="Enter Mobile"
+                  max="10"
+                  required="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="pure-button pure-button-primary"
+                  type="submit"
+                  value="Register"
+                />
+              </td>
+              <td>
+                <input
+                  class="pure-button pure-button-primary"
+                  type="reset"
+                  value="Cancel"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>
+/////////////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+const { Register } = require('./Register');
+var mysql = new require('mysql');
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'admin',
+    database: 'initechdb'
+});
+
+var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static("./public"));
+app.get("/index.html", function (req, res) {
+    res.sendFile(__dirname + "./public/index.html");
+});
+app.post("/p_post", urlEncodedBodyParser, function (req, res) {
+    var id = Number.parseInt(req.body.id);
+    var name = req.body.name;
+    var email = req.body.email;
+    var mobile = req.body.mobile;
+    var regist = new Register(id, name, email, mobile);
+    var a = JSON.stringify(regist);
+    conn.connect(function (e) {
+        conn.query("insert into register values (" + id + ",'" + name + "','" + email + "','" + mobile + "')");
+    });
+    res.send(a);
+});
+
+app.listen(3000, () => {
+    console.log("Form Server Is Up");
+});
+///////
+https://www.npmjs.com/package/npm-profile
+//////////
+var express = require('express');
+var router = express.Router();
+
+var obj = { id: 101, name: 'sunil', email: 'sunil@gmail.com' };
+router.get("/", function (req, res) {
+    var aa = JSON.stringify(obj);
+    res.send(aa);
+});
+
+module.exports = router;
+/////////////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var router = require('./router');
+var crouter = require('./crouter');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/data', router);
+app.use('/cdata', crouter);
+app.listen(5000, () => {
+    console.log("Service is Up!");
+});
+/////////
+var express = require('express');
+var router = express.Router();
+
+var obj = { id: 101, name: 'sunil', email: 'sunil@gmail.com' };
+router.get("/", function (req, res) {
+    var aa = JSON.stringify(obj);
+    res.send(aa);
+});
+router.post("/p", function (req, res) {
+    res.send("This is post request");
+});
+router.put("/pu", function (req, res) {
+    res.send("This is put request");
+});
+router.delete("/d", function (req, res) {
+    res.send("This is delete request");
+});
+
+module.exports = router;
+////
+eslint
+////
+const { Cars } = require("./Cars");
+
+const lcars = () => {
+    var cArr = [];
+    var arr1 = ['Octavio', 'Punto', 'Beetel', 'Lilac', 'Lincoln'];
+    var arr2 = ['Skoda', 'Fiat', 'VW', 'Cadillac', 'Continental'];
+    for (let i = 0; i < arr1.length; i++) {
+        var car = new Cars(arr1[i], arr2[i]);
+        cArr.push(car);
+    }
+    return cArr;
+}
+module.exports.lcars = lcars;
+////
+class Cars {
+    constructor(name, brand) {
+        this.name = name;
+        this.brand = brand;
+    }
+}
+module.exports.Cars = Cars;
+//////
+var express = require('express');
+const { lcars } = require('./lcars');
+const { Cars } = require('./Cars');
+var crouter = express.Router();
+var obj = JSON.stringify(lcars());
+
+crouter.get("/", function (req, res) {
+    res.send(obj);
+});
+crouter.post("/ins/:cname/:cbrand", function (req, res) {
+    var n = req.params.cname;
+    var b = req.params.cbrand;
+    var car = new Cars(n, b);
+    var aa = lcars().push(car);
+    res.send(JSON.stringify(car));
+});
+crouter.put("/ups/:cname/:cbrand", function (req, res) {
+    var n = req.params.cname;
+    var b = req.params.cbrand;
+    var car = new Cars(n, b);
+    var aa = lcars().push(car);
+    res.send(JSON.stringify(car));
+    console.log("Record Updated In Table");
+});
+crouter.delete("/del/:cname", function (req, res) {
+    var nc = req.params.cname;
+    // var car = null;
+    // lcars().filter(n => (n.name === nc))
+    //     .forEach(n => {
+    //         car = n;
+    //     });
+    var arr = [];
+    lcars().filter(n => (n.name !== nc))
+        .forEach(n => {
+            arr.push(n);
+        });
+    res.send(JSON.stringify(arr));
+    console.log("Record deleted from table");
+});
+module.exports = crouter;
+////
+npm install express-generator -g
+//////
+https://www.npmjs.com/package/favicons
+/////////
+npm i npx
+npx create-react-app myapp
+/////
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to React</h1>
+      <br />
+      <CompA />
+      <br />
+      <CompB />
+      <br />
+      <CompC />
+      <br />
+      <CompD />
+      <br />
+      <CompE />
+    </div>
+  );
+}
+
+class CompA extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1 style={{ backgroundColor: 'blue', color: 'red' }}>Welcome to Class Components</h1>
+      </React.Fragment>)
+  }
+}
+
+const CompB = class extends React.Component {
+  render() {
+    const mystyle = {
+      backgroundColor: 'red',
+      color: 'yellow'
+    }
+    return (<>
+      <h2 style={mystyle}>Second class syntax of Component</h2>
+    </>)
+  }
+}
+
+function CompC(props) {
+  return (<>
+    <h3 className='aa'>First Functional Component</h3>
+  </>)
+}
+
+const CompD = function (props) {
+  return (<>
+    <h4 className='bb'>Second Functional Component</h4>
+  </>)
+}
+
+const CompE = (props) => {
+  return (<>
+    <h5 style={{ backgroundColor: 'crimson', color: 'yellow' }}>Third Functional Component</h5>
+  </>)
+}
+
+
+export default App;
+
+/////////////
+import React from "react";
+
+class NApp extends React.Component {
+    render() {
+        return (<>
+            <h1>New Entry Point</h1>
+            <br />
+
+        </>)
+    }
+}
+
+export default NApp;
+///////
+function AComp(props) {
+    const i = true;
+    return (<>
+        <p>{i ? <span>Hello</span> : <span>False</span>}</p>
+        <ul style={{ listStyleType: 'none' }}>
+            {
+                ['Newton', 'Raman', 'Ramanujam', 'Bose', 'Chandra']
+                    .map(n => <li key={n}>{n}</li>)
+            }
+        </ul>
+        <br />
+        <select>
+            {
+                ['Nuclear Physics', 'Electronics', 'Geo Physics', 'Nano Technology', 'AI&ML']
+                    .map(n => <option key={n}>{n}</option>)
+            }
+        </select>
+        <table border="1">
+            {
+                [
+                    { id: 1, name: 'Jeevan' },
+                    { id: 2, name: 'John' },
+                    { id: 3, name: 'Kiran' },
+                    { id: 4, name: 'Ali' },
+                    { id: 5, name: 'Markus' }
+                ].map(n => <tr key={n.id}><td><button style={{ backgroundColor: 'ButtonShadow' }}>{n.id}</button></td><td>{n.name}</td></tr>)
+            }
+        </table>
+        <br />
+        <ol style={{ accentColor: 'red', color: 'red', backgroundColor: 'black' }}>
+            {
+                ['Nuclear Physics', 'Electronics', 'Geo Physics', 'Nano Technology', 'AI&ML']
+                    .map(n => <option key={n}>{n.toUpperCase()}</option>)
+            }
+        </ol>
+
+    </>)
+}
+
+export default AComp;
+////////
+import React from "react";
+
+class BComp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            a: 1009,
+            b: 'This is a string',
+            c: false,
+            d: { id: 1019, name: 'Satish', email: 'sat@yahoo.com' },
+            e: ['Newton', 'Raman', 'Ramanujam', 'Bose', 'Chandra']
+        }
+    }
+    componentDidMount() {
+        this.setState({ a: 9001 });
+        this.setState({ b: 'Godzilla Vs Kingkong' });
+        this.setState({ c: true });
+        this.setState({ d: { id: 1119, name: 'Sakshi', email: 'sakshi@yahoo.com' } })
+    }
+    render() {
+        return (<>
+            <p>{this.state.a}</p>
+            <p>{this.state.b}</p>
+            <p>{this.state.c ? <span>True</span> : <span>False</span>}</p>
+            <p>{JSON.stringify(this.state.d)}</p>
+            {
+                this.state.e.map(n => <div style={{ borderWidth: '2px' }} key={n}>{n}</div>)
+            }
+        </>)
+    }
+}
+
+export default BComp;
+///////
+import { useEffect, useState } from "react";
+
+const CComp = (props) => {
+    const [a, SetA] = useState(1009);
+    const [b, SetB] = useState('This is a string');
+    const [c, SetC] = useState(false);
+    const [d, SetD] = useState({ id: 10, name: 'sanjay' });
+    useEffect(() => {
+        SetA(9001);
+        SetB('Iam a new string');
+        SetC(true);
+        SetD({ id: 101, name: 'Mukesh', email: 'mukesh@yahoo.com' });
+    }, []);
+    return (<>
+        <p>{a}</p>
+        <p>{b}</p>
+        <p>{c ? <p>True</p> : <p>False</p>}</p>
+        <p>{JSON.stringify(d)}</p>
+    </>)
+}
+
+export default CComp;
+//////
+import React from "react";
+import EComp from "./EComp";
+
+class DComp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { a: 'Iam a value from parent', b: 9878 }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ a: 'Iam modified value' })
+        }, 5000);
+    }
+
+    render() {
+        return (<>
+            <h1>Iam a parent Component</h1>
+            <br />
+            <EComp a={this.state.a} b={this.state.b} />
+        </>)
+    }
+}
+
+export default DComp;
+//////
+import React from "react";
+
+class EComp extends React.Component {
+    render() {
+        return (<>
+            <h1 style={{ backgroundColor: 'rebeccapurple', color: 'chartreuse' }}>This is Child Component</h1>
+            <br />
+            <h1>{this.props.a}</h1>
+mkdir secproj && cd secproj && npm init -y && type nul> index.js && code .
+/////
+npm i express
+npm uninstall express
+/////////
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+var listener1 = function listener1() {
+    console.log("Listener1 Executed");
+}
+var listener2 = function listener2() {
+    console.log("Listener2 Executed");
+}
+var listener3 = function listener3() {
+    console.log("Listener3 Executed");
+}
+var listener4 = function listener4() {
+    console.log("Listener4 Executed");
+}
+var listener5 = function listener5() {
+    console.log("Listener5 Executed");
+}
+var lArr = [listener1, listener2, listener3, listener4, listener5];
+// eventEmitter.addListener("connection", listener1);
+// eventEmitter.addListener("connection", listener2);
+// eventEmitter.on("connection", listener1);
+// eventEmitter.on("connection", listener2);
+// eventEmitter.removeListener("connection", listener1);
+// eventEmitter.removeAllListeners("connection");
+console.log(eventEmitter.listenerCount("connection"));
+lArr.forEach(n => {
+    // if (n.name === 'listener1')
+    eventEmitter.addListener("connection", n);
+
+});
+console.log(eventEmitter.listenerCount("connection"));
+eventEmitter.emit("connection");
+///////////////
+node --no-deprecation filea.js
+///////////
+
+/**
+ * Function illustrating the creation of buffers in JS
+ */
+//#region 
+function creabuff() {
+    var buf = new Buffer(10);
+    console.log(buf);
+    var bufa = new Buffer([1, 2, 3, 4, 5]);
+    console.log(bufa);
+    var bufb = new Buffer("Test Buffer", "utf-8");
+    console.log(bufb);
+}
+//#endregion
+
+/**
+ * Common ways of writing to buffer
+ */
+//#region 
+function writeBuff() {
+    var bufd = new Buffer(26);
+    var len = bufd.write("Test String");
+    console.log("The string is written to buffer of length ", len);
+    console.log(bufd);
+}
+//#endregion
+
+/**
+ * Reading from a buffer
+ */
+//#region 
+function readBuff() {
+    var buf = new Buffer(26);
+    var str = '';
+    for (let i = 0; i < 26; i++) {
+        str += String.fromCharCode(i + 97);
+    }
+    buf.write(str, "utf-8");
+    console.log(buf.toString('ascii'));
+    console.log(buf.toString('hex'));
+    console.log(buf.toString());
+    console.log(buf.toJSON(buf));
+}
+//#endregion
+
+/**
+ * Combining Buffers
+ */
+//#region 
+function combBuff() {
+    var buf1 = new Buffer("First Buffer");
+    var buf2 = new Buffer("Second Buffer");
+    var buf21 = new Buffer("Third Buffer");
+    var buf3 = Buffer.concat([buf1, buf2, buf21]);
+    console.log(buf3.toString('ascii'));
+}
+//#endregion
+
+/**
+ * Copying one buffer into other
+ */
+//#region 
+function copyBuff() {
+    var bufa = new Buffer("SATISH");
+    var bufb = new Buffer(6);
+    bufa.copy(bufb);
+    console.log(bufb.toString('ascii'));
+}
+//#endregion
+
+/**
+ * Slicing the buffer
+ */
+//#region 
+function sliceBuff() {
+    var buf = new Buffer("My Table");
+    var buf2 = buf.slice(0, 3);
+    console.log(buf2.toString('ascii'));
+    console.log(buf2.length);
+}
+//#endregion
+///////////
+
+Stream
+-Readable(reading)
+-Writable(writing)
+-Duplex(both at the same time)
+-Transform(change the data from one form to another)
+
+-data
+-end
+-error
+-flush
+///////////
+
+var fs = require('fs');
+const paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\chandler.txt";
+// nonblockMode();
+//non blocking mode
+function nonblockMode() {
+    fs.readFile(paths, (e, d) => {
+        if (e) return console.log(e);
+        console.log(d.toString('utf-8'));
+    });
+    console.log("File Op Completed");
+}
+
+//Blocking mode of code
+function blockingMode() {
+    var fs = require('fs');
+    var data = '';
+    data = fs.readFileSync(paths);
+    console.log(data.toString());
+    console.log("File Op Completed");
+}
+//////////
+var fs = require('fs');
+const paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\chandler.txt";
+var data = '';
+var rs = fs.createReadStream(paths);
+rs.setEncoding('utf-8');
+rs.on('data', function (chunk) {
+    data += chunk;
+});
+rs.on('end', function () {
+    console.log(data);
+});
+rs.on('error', function (e) {
+    console.log(e.stack);
+});
+console.log("Read Op Completed!");
+////////
+var fs = require('fs');
+const paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\chandler.txt";
+var rs = fs.createReadStream(paths);
+var data = '';
+rs.on('readable', function (c) {
+    while ((c = rs.read()) != null) {
+        data += c;
+    }
+});
+rs.on('end', function () {
+    console.log(data.toString());
+});
+rs.on('error', function (e) {
+    console.log(e.stack);
+});
+console.log("Read Op Completed!");
+///////////
+var fs = require('fs');
+const paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\mytest.txt";
+var data = "";
+console.log(new Date());
+for (let i = 0; i < 100000; i++) {
+    data += "Sqrt(" + i + ")=" + Math.sqrt(i) + ";";
+}
+var ws = fs.createWriteStream(paths);
+ws.write(data, 'utf-8');
+ws.end();
+
+ws.on("finish", function () {
+    console.log("Write Done!");
+});
+console.log(new Date());
+ws.on('error', function (e) {
+    console.log(e.stack);
+});
+console.log("Write Op Completed!");
+////////
+const { Readable } = require('stream');
+
+async function* generate() {
+    var i = 0;
+    while (i <= 20) {
+        yield "Log(" + i + ")=" + Math.log(i);
+        i++;
+    }
+}
+
+const readable = Readable.from(generate());
+readable.on('data', (c) => console.log(c));
+/////////
+const { Readable } = require('stream');
+
+var map = new Map();
+var ia = [1, 2, 3, 4, 5];
+var ja = ["Juniper", "Avaya", "Microsoft", "Sun Microsystems", "Oracle"];
+for (let i = 0; i < ia.length; i++) {
+    map.set(ia[i], ja[i]);
+}
+var ents = map.entries();
+function* mapGen() {
+    for (let k = ents.next(); k.done != true; k = ents.next()) {
+        yield k.value[0] + " " + k.value[1];
+    }
+}
+
+const readablea = Readable.from(mapGen());
+readablea.on("data", (c) => console.log(c));
+async function* generate() {
+    var i = 0;
+    while (i <= 20) {
+        yield "Log(" + i + ")=" + Math.log(i);
+        i++;
+    }
+}
+
+// const readable = Readable.from(generate());
+// readable.on('data', (c) => console.log(c));
+////////////
+//Chaining streams
+var fs = require('fs');
+var zlib = require('zlib');
+const patha = "C:\\Users\\Satish\\sopra05022024\\secproj\\i.txt";
+const pathb = "C:\\Users\\Satish\\sopra05022024\\secproj\\i.txt.gz";
+fs.createReadStream(patha)
+    .pipe(zlib.createGzip())
+    .pipe(fs.createWriteStream(pathb));
+console.log("File Zipped!");
+//////////
+var arr = ['Raman', 'Einstein', 'Newton', 'Curie', 'Dirac'];
+var itr = arr[Symbol.iterator]();
+for (let i = itr.next(); i.done !== true; i = itr.next()) {
+    console.log(i.value);
+}
+var map = new Map();
+var ia = [1, 2, 3, 4, 5];
+var ja = ["Juniper", "Avaya", "Microsoft", "Sun Microsystems", "Oracle"];
+for (let i = 0; i < ia.length; i++) {
+    map.set(ia[i], ja[i]);
+}
+var ent = map.entries();
+for (let i = ent.next(); i.done !== true; i = ent.next()) {
+    console.log(i.value[0] + " " + i.value[1]);
+}
+///////////
+var fs = require('fs');
+function filemanipTech() {
+    var paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\NewDir";
+    var pathsa = "C:\\Users\\Satish\\sopra05022024\\secproj\\NewDirA";
+    // fs.mkdir(paths, () => { });
+    // fs.rename(paths, pathsa, () => { });
+    // fs.rmdir(pathsa, () => { });
+    var pathsb = "C:\\Users\\Satish\\sopra05022024\\";
+    fs.readdir(pathsb, (e, f) => {
+        console.log(f.toString());
+    });
+    var paths = "C:\\Users\\Satish\\sopra05022024\\secproj\\myfile.txt";
+    fs.createWriteStream(paths);
+}
+
+////////////test.bat///////////
+dir
+mkdir ADIR
+//////
+npm i child_process
+//////
+const exec = require('child_process').exec;
+
+exec("C:\\Users\\Satish\\sopra05022024\\secproj\\testfile.bat", (err, stdout, stdin) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log(stdout);
+});
+///
+const { stdout, stdin } = require('process');
+
+var exec = require('child_process').exec;
+
+exec("notepad C:\\Users\\Satish\\sopra05022024\\secproj\\i.txt", (err, stdout, stdin) => {
+    console.log(stdout);
+});
+/////////
+https://www.freecodecamp.org/news/ascii-table-hex-to-ascii-value-character-code-chart-2/
+///////
+npm i string_decoder
+/////
+const { StringDecoder } = require('string_decoder');
+const decoder = new StringDecoder("utf-8");
+const bufa = new Buffer("534154495348", "hex");
+console.log(bufa);
+console.log(decoder.write(bufa));
+const bufb = new Buffer("String test");
+console.log(bufb);
+console.log(decoder.write(bufb));
+const bufc = new Buffer("8C", "hex");
+console.log(decoder.write(bufc));
+
+
+
+
+
+//////////07-02-2024/////////
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'text/html' });
+    res.write("<h1 style=\"background-color:red;color:yellow;\">Welcome to Nodejs Web App</h1>");
+    res.write("<br/><h1>One more line</h1>");
+
+}).listen(3000, () => {
+    console.log("Server is up");
+});
+//////////
+var http = require('http');
+const { lscars } = require('./listcars');
+var menu = "<table border=1><tr><td><a href=\"/home\">Home</a></td><td><a href=\"/about\">About</a></td><td><a href=\"/contact\">Contact Us</a></td><td><a href=\"/proj\">Projects</a></td></tr></table>";
+var server = http.createServer((req, res) => {
+    if (req.url === '/home') {
+        res.write(menu + "<br/><h1 style=\"background-color:red;color:yellow;\">Welcome to home page</h1><br/><hr/><br/><center><h1>List of Cars</h1></center><br/><hr/><br/>");
+        var str = "<center><table border=1 style=\"background-color:teal;color:aqua;\"><thead><tr><th>Name</th><th>Brand</th></tr></thead><tbody>";
+        var arr = lscars();
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr><td>" + arr[i].name + "</td><td>" + arr[i].brand + "</td></tr>";
+        }
+        str += "</table></center>";
+        res.write(str);
+        res.end("");
+    } else if (req.url === '/about') {
+        res.write(menu + "<br/><h1 style=\"background-color:red;color:yellow;\">Welcome to about us page</h1>");
+        res.end("");
+    } else if (req.url === '/contact') {
+        res.write(menu + "<br/><h1 style=\"background-color:red;color:yellow;\">Welcome to contact us page</h1>");
+        res.end("");
+    } else if (req.url === '/proj') {
+        res.write(menu + "<br/><h1 style=\"background-color:red;color:yellow;\">Welcome to projects page</h1>");
+        res.end("");
+    } else {
+        res.end(menu + "<br/>Welcome to our web site");
+    }
+});
+server.listen(3000, () => {
+    console.log("Server is Up!");
+});
+//////////
+const { Cars } = require("./Cars");
+function lsCars() {
+    var lCars = [];
+    var arr1 = ['Octavio', 'Thar', 'Esteem', 'Road Rover', 'Lincoln'];
+    var arr2 = ['Skoda', 'Jeep', 'Maruti', 'Lexus', 'Continental'];
+    for (let i = 0; i < arr1.length; i++) {
+        var car = new Cars(arr1[i], arr2[i]);
+        lCars.push(car);
+    }
+    return lCars;
+}
+module.exports.lscars = lsCars;
+///////
+class Cars {
+    constructor(name, brand) {
+        this.name = name;
+        this.brand = brand;
+    }
+}
+module.exports.Cars = Cars;
+/////////////
+mkdir fourproj && cd fourproj && npm init -y && type nul> app.js && mkdir public && code .
+////////////
+npm i serve-static
+//////////
+npm i finalhandler
+//////////
+var http = require('http');
+var finalhandler = require('finalhandler');
+var serveStatic = require('serve-static');
+
+var serve = serveStatic('./public');
+var server = http.createServer(function (req, res) {
+    var done = finalhandler(req, res);
+    serve(req, res, done);
+});
+
+server.listen(3000, () => {
+    console.log("File server is up!");
+});
+//////////////////
+npm install hostr -g
+npm install http-server -g
+/////////////
+var http = require('http');
+var server = http.createServer(function (req, res) {
+    res.write("<h1>Welcome to PKG based packaged server</h1>");
+    res.end("");
+});
+server.listen(3000, () => {
+    console.log("Server is up!");
+});
+//////
+ "bin": "index.js",
+///////
+npm i child_process
+/////
+var sp = require('child_process').spawn;
+sp("notepad.exe", ["C:\\Users\\Satish\\sopra05022024\\fiveproj\\index.js"]);
+///////
+var static = require('node-static');
+var file = new static.Server('./public');
+
+require('http').createServer((req, res) => {
+    req.addListener("end", function () {
+        file.serve(req, res);
+    }).resume();
+}).listen(3000, () => {
+    console.log("File server is up!");
+});
+
+////
+npm i node-static
+//////////
+https://www.phenomic.io/
+//////
+Phenomic
+antwar
+story book
+/////
+class Cars {
+    constructor(name, brand) {
+        this.name = name;
+        this.brand = brand;
+    }
+}
+
+class Books {
+    constructor(name, author) {
+        this.name = name;
+        this.author = author;
+    }
+}
+
+module.exports = {
+    Cars: Cars,
+    Books: Books
+}
+/////
+var ss = require('./Cars');
+var first = new ss.Cars("Octavio", "Skoda");
+var sec = new ss.Books("Gita", "Vyas");
+console.log(JSON.stringify(first));
+console.log(JSON.stringify(sec));
+///////////
+const net = require('net');
+const server = net.createServer((socket) => {
+    socket.on('data', (data) => {
+        console.log(data.toString('ascii'));
+    });
+    let arr = ['Einstein\n', 'Ramanujam\n', 'Bohr\n', "Wolfgang Pauli\n", "James Watt\n"];
+    arr.forEach(n => {
+        socket.write(n.toUpperCase());
+    });
+    // socket.write("SERVER:Hello from server!");
+    socket.end("Server Now Closing The Connection!");
+}).on('error', (err) => {
+    console.log(err);
+});
+server.listen(9898, () => {
+    console.log("Opened The Socket Server");
+});
+///////////
+const net = require('net');
+var arr = [];
+const client = net.createConnection({ port: 9898 }, () => {
+    console.log("Client:Connected to server");
+    client.write("CLIENT:Recieved The messages from you thanks");
+});
+client.on('data', (data) => {
+    arr.push(data.toString('utf-8'));
+    client.write('\n' + "*".repeat(30) + '\n' + arr.toString().toLowerCase());
+    client.end();
+});
+client.on('end', () => {
+    console.log("Disconnected!");
+});
+////////
+npm i websocket
+///////////
+
+const http = require('http');
+const WebSocketServer = require("websocket").server;
+const server = http.createServer();
+server.listen(9898);
+const wsServer = new WebSocketServer({
+    httpServer: server
+});
+wsServer.on('request', function (request) {
+    const connection = request.accept(null, request.origin);
+    connection.on("message", function (m) {
+        console.log("Recieved Message ", m.utf8Data);
+        connection.sendUTF("Hi there this is socket server");
+    });
+    connection.on('close', function (r, d) {
+        console.log("Client Disconnected!");
+    });
+});
+/////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Websocket Client</title>
+    <script>
+      const ws = new WebSocket("ws://localhost:9898");
+      ws.onopen = function () {
+        console.log("Socket Client Connected");
+        ws.send("Hi there this browser client");
+      };
+      ws.onmessage = function (e) {
+        alert(e.data);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
+////////
+const http = require('http');
+const WebSocketServer = require("websocket").server;
+const server = http.createServer();
+server.listen(9898);
+const wsServer = new WebSocketServer({
+    httpServer: server
+});
+wsServer.on('request', function (request) {
+    const connection = request.accept(null, request.origin);
+    connection.on("message", function (m) {
+        console.log("Recieved Message ", m.utf8Data);
+        let arr = ["Physics", "Nuclear Physics", "Geo Physics", "Mathematical Physics", "Low Temperature Physics"];
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+            str += arr[i] + ";"
+        }
+        connection.sendUTF(str);
+    });
+    connection.on('close', function (r, d) {
+        console.log("Client Disconnected!");
+    });
+});
+/////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Websocket Client</title>
+    <script>
+      var arr = [];
+      const ws = new WebSocket("ws://localhost:9898");
+      ws.onopen = function () {
+        console.log("Socket Client Connected");
+        ws.send("Hi there this browser client");
+      };
+      ws.onmessage = function (e) {
+        var str = e.data;
+        arr = str.split(";");
+        // document.getElementById("diva").innerHTML = "<h1>" + arr[0] + "</h1>";
+        // document.getElementById("divb").innerHTML = "<h1>" + arr[1] + "</h1>";
+        // document.getElementById("divc").innerHTML = "<h1>" + arr[2] + "</h1>";
+        // document.getElementById("divd").innerHTML = "<h1>" + arr[3] + "</h1>";
+        // document.getElementById("dive").innerHTML = "<h1>" + arr[4] + "</h1>";
+        var arrb = ["diva", "divb", "divc", "divc", "divd"];
+        for (let i = 0; i < arr.length; i++) {
+          document.getElementById(arrb[i]).innerHTML =
+            "<h1>" + arr[i] + "</h1>";
+        }
+      };
+      function funa() {
+        ws.send(document.getElementById("txt").value);
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      id="diva"
+      style="
+        background-color: aqua;
+        color: blue;
+        border: 2px;
+        border-radius: 10px;
+        text-align: center;
+      "
+    ></div>
+    <div
+      id="divb"
+      style="
+        background-color: beige;
+        color: blue;
+        border: 2px;
+        border-radius: 10px;
+        text-align: center;
+      "
+    ></div>
+    <div
+      id="divc"
+      style="
+        background-color: aliceblue;
+        color: blue;
+        border: 2px;
+        border-radius: 10px;
+        text-align: center;
+      "
+    ></div>
+    <div
+      id="divd"
+      style="
+        background-color: yellow;
+        color: blue;
+        border: 2px;
+        border-radius: 10px;
+        text-align: center;
+      "
+    ></div>
+    <div
+      id="dive"
+      style="
+        background-color: red;
+        color: blue;
+        border: 2px;
+        border-radius: 10px;
+        text-align: center;
+      "
+    ></div>
+
+    <br />
+    <input type="text" id="txt" name="txt" placeholder="enter name" />
+    <br /><input type="button" value="Send" onclick="funa()" />
+  </body>
+</html>
+///////08-02=2024////////
+var express = require('express');
+var app = express();
+
+app.get("/first", function (req, res) {
+    res.send("<h1>Welcome to expressjs</h1>");
+});
+app.get("/sec", (req, res) => {
+    res.send("<h2>Another End Point!</h2>");
+});
+
+app.listen(3000, () => {
+    console.log("Express App is running!");
+});
+////////////
+var express = require('express');
+var app = express();
+
+app.get("/greq", (req, res) => {
+    res.send("This is get request");
+});
+
+app.post("/preq", (req, res) => {
+    res.send("This is post request");
+});
+
+app.put("/ureq", (req, res) => {
+    res.send("This is put request");
+});
+
+app.delete("/dreq", (req, res) => {
+    res.send("This is delete request");
+});
+
+app.listen(3000, () => {
+    console.log("Running express app");
+});
+////////
+var express = require('express');
+var app = express();
+var menu = "<html><head><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css\" integrity=\"sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls\" crossorigin=\"anonymous\"></head><table class=\"pure-table pure-table-striped\"><tr><td><a href=\"/home\">Home</a></td><td><a href=\"/about\">About</a></td><td><a href=\"/contact\">Contact</a></td><td><a href=\"/proj\">Projects</a></td></tr></table><br/><hr/><br/>";
+app.get("/home", function (req, res) {
+    res.send(menu + "<h1 class=\"pure-button pure-button-primary\">Home page of our website!</h1></body>");
+});
+app.get("/about", function (req, res) {
+    res.send(menu + "<h1 class=\"pure-button pure-button-primary\">About us page of website</h1></body>");
+});
+app.get("/contact", function (req, res) {
+    res.send(menu + "<h1 class=\"pure-button pure-button-primary\">Contact us page</h1></body>");
+});
+app.get("/proj", function (req, res) {
+    res.send(menu + "<h1 class=\"pure-button pure-button-primary\">Projects page</h1></body>");
+});
+app.listen(3000, () => {
+    console.log("Express App");
+});
+/////////
+app.get("/ccar/:cname/:cbrand", function (req, res) {
+    var name = req.params.cname;
+    var brand = req.params.cbrand;
+    var car = new Cars(name, brand);
+    res.send("<pre>" + JSON.stringify(car) + "</pre>");
+});
+/////////////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form
+      action="http://localhost:3000/p_post"
+      method="post"
+      class="pure-form pure-form"
+    >
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="aligned-name">Username</label>
+          <input type="text" name="name" placeholder="Username" />
+        </div>
+        <div class="pure-control-group">
+          <label for="aligned-password">Password</label>
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">
+            Submit
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
+///////////
+npm i body-parser
+////////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static('./public'));
+app.get("index.html", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
+});
+app.post("/p_post", urlEncodedBodyParser, function (req, res) {
+    var obj = { username: req.body.username, password: req.body.password };
+    console.log(JSON.stringify(obj));
+    res.end(JSON.stringify(obj));
+});
+app.listen(3000, () => {
+    console.log("Form Is Running!");
+});
+///////////
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body>
+    <form action="http://localhost:3000/p_post" method="post">
+      <center>
+        <table>
+          <thead>
+            <tr style="background-color: gray">
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>
+                <input
+                  type="number"
+                  required="true"
+                  name="id"
+                  placeholder="Enter Id"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>
+                <input
+                  type="text"
+                  name="name"
+                  required="true"
+                  placeholder="Enter Name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input
+                  type="email"
+                  name="email"
+                  required="true"
+                  placeholder="Enter Email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>
+                <input
+                  type="text"
+                  name="mobile"
+                  required="true"
+                  placeholder="Enter Mobile"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="submit"
+                  style="background-color: gray; color: red; border-radius: 5px"
+                  value="Send"
+                />
+              </td>
+              <td>
+                <input
+                  type="reset"
+                  value="Cancel"
+                  style="background-color: gray; color: red; border-radius: 5px"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </form>
+  </body>
+</html>
+//////////////
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mysql = new require('mysql');
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'admin',
+    database: 'synchpracs'
+});
+var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static('./public'));
+app.get("/register.html", (req, res) => {
+    res.sendFile(__dirname + "/public/register.html");
+});
+app.post("/p_post", urlEncodedBodyParser, function (req, res) {
+    var obj = { id: req.body.id, name: req.body.name, email: req.body.email, mobile: req.body.mobile };
+    console.log(JSON.stringify(obj));
+    conn.connect(
+        function (e) {
+            conn.query('insert into register values(' + obj.id + ",'" + obj.name + "','" + obj.email + "','" + obj.mobile + "')");
+        }
+    );
+    res.end(JSON.stringify(obj));
+});
+app.listen(3000, () => {
+    console.log("Form Is Running!");
+});
+////////////
+npm i mysql
+//////
+class Cars {
+    constructor(id, name, brand) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+    }
+}
+module.exports.Cars = Cars;
+///
+const { Cars } = require("./Cars");
+function lsCars() {
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = ['Thar', 'EClass', 'Road Rover', 'Lincoln', 'Camry'];
+    var arr3 = ['Jeep', 'Mercedes', 'Lexus', 'Continental', 'Toyota'];
+    var cArr = [];
+    for (let i = 0; i < arr1.length; i++) {
+        var car = new Cars(arr1[i], arr2[i], arr3[i]);
+        cArr.push(car);
+    }
+    return cArr;
+}
+module.exports.lsCars = lsCars;
+///////////
+var express = require('express');
+const { lsCars } = require('./lscars');
+const { Cars } = require('./Cars');
+var router = express.Router();
+var data = JSON.stringify(lsCars());
+
+router.get("/", function (req, res) {
+    res.send(data);
+});
+router.get("/selsing/:id", function (req, res) {
+    var car = new Cars(0, '', '');
+    let arr = lsCars();
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].id === Number.parseInt(req.params.id)) {
+            res.send(JSON.stringify(arr[i]));
+            break;
+        }
+    }
+});
+
+router.post("/inssing/:id/:name/:brand", function (req, res) {
+    var car = new Cars(req.params.id, req.params.name, req.params.brand);
+    var aa = lsCars();
+    aa.push(car);
+    res.send(JSON.stringify(aa));
+});
+
+router.put("/prec/:id", function (req, res) {
+    res.send(JSON.stringify(lsCars().filter(n => n.id === Number.parseInt(req.params.id))));
+});
+
+router.delete("/dels", function (req, res) {
+    res.send(JSON.stringify(lsCars().pop()));
+});
+
+module.exports = router;
+
+////
+var app = require('express')();
+var bodyParser = require('body-parser');
+var router = require('./router');
+var routera = require('./routera');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/data", router);
+app.use("/bdata", routera);
+app.listen(5000, () => {
+    console.log("Service is up");
+});
+/////
+class Books {
+    constructor(id, name, auth) {
+        this.id = id;
+        this.name = name;
+        this.auth = auth;
+    }
+}
+module.exports.Books = Books;
+/////////
+class Cars {
+    constructor(id, name, brand) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+    }
+}
+module.exports.Cars = Cars;
+//////////
+const { Books } = require("./Books");
+
+function lsBooks() {
+    var bArr = [];
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = ['Blue Book', 'Green Book', 'Red Book', 'Yellow Book', 'Orange Book'];
+    var arr3 = ['Father Mathews', 'Pastor Mason', 'John Shephard', 'Ramsey Reynolds', 'Peter  Murton'];
+    for (let i = 0; i < arr2.length; i++) {
+        var book = new Books(arr1[i], arr2[i], arr3[i]);
+        bArr.push(book);
+    }
+    return bArr;
+}
+
+module.exports.lsBooks = lsBooks;
+//////////
+const { Cars } = require("./Cars");
+function lsCars() {
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = ['Thar', 'EClass', 'Road Rover', 'Lincoln', 'Camry'];
+    var arr3 = ['Jeep', 'Mercedes', 'Lexus', 'Continental', 'Toyota'];
+    var cArr = [];
+    for (let i = 0; i < arr1.length; i++) {
+        var car = new Cars(arr1[i], arr2[i], arr3[i]);
+        cArr.push(car);
+    }
+    return cArr;
+}
+module.exports.lsCars = lsCars;
+////////
+var express = require('express');
+const { lsCars } = require('./lscars');
+const { Cars } = require('./Cars');
+var router = express.Router();
+var data = JSON.stringify(lsCars());
+
+router.get("/", function (req, res) {
+    res.send(data);
+});
+router.get("/selsing/:id", function (req, res) {
+    var car = new Cars(0, '', '');
+    let arr = lsCars();
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].id === Number.parseInt(req.params.id)) {
+            res.send(JSON.stringify(arr[i]));
+            break;
+        }
+    }
+});
+
+router.post("/inssing/:id/:name/:brand", function (req, res) {
+    var car = new Cars(req.params.id, req.params.name, req.params.brand);
+    var aa = lsCars();
+    aa.push(car);
+    res.send(JSON.stringify(aa));
+});
+
+router.put("/prec/:id", function (req, res) {
+    res.send(JSON.stringify(lsCars().filter(n => n.id === Number.parseInt(req.params.id))));
+});
+
+router.delete("/dels", function (req, res) {
+    res.send(JSON.stringify(lsCars().pop()));
+});
+
+module.exports = router;
+///////
+var express = require('express');
+const { lsBooks } = require('./lsbooks');
+const { Books } = require('./Books');
+var routera = express.Router();
+
+var data = JSON.stringify(lsBooks());
+
+routera.get("/", function (req, res) {
+    res.send(data);
+});
+
+routera.post("/ibook/:id/:name/:auth", function (req, res) {
+    var book = new Books(req.params.id, req.params.name, req.params.auth);
+    var ls = lsBooks();
+    ls.push(book);
+    res.send(JSON.stringify(ls));
+});
+
+routera.put("/ubook/:id/:name/:auth", function (req, res) {
+    var book = new Books(req.params.id, req.params.name, req.params.auth);
+    var ls = lsBooks();
+    ls.push(book);
+    res.send(JSON.stringify(ls));
+});
+
+routera.delete("/dbook", function (req, res) {
+    res.send(JSON.stringify(lsBooks().pop()));
+});
+
+
+
+module.exports = routera;
+///////////
+npm install express-generator -g
+/////////
+express myappa
+///
+cd myappa
+npm install
+
+////////////
+npm i npx
+npx create-react-app myapp
+///////
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to React</h1>
+      <br />
+      <MyCompA />
+      <br />
+      <MyCompB />
+      <br />
+      <MyCompC />
+      <br />
+      <MyCompD />
+      <br />
+      <MyCompE />
+    </div>
+  );
+}
+
+class MyCompA extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Welcome to React Class Component</h1>
+      </React.Fragment>
+    )
+  }
+}
+
+const MyCompB = class extends React.Component {
+  render() {
+    return (<>
+      <h1>Welcome to Anonymous class syntax</h1>
+    </>)
+  }
+}
+
+function MyCompC(props) {
+  return (<>
+    <h1>Functional Component First</h1>
+  </>)
+}
+
+const MyCompD = function (props) {
+  return (<>
+    <h1>Another Functional  Component!</h1>
+  </>)
+}
+
+const MyCompE = (props) => {
+  return (<>
+    <h1>Welcome to Arrow Functional Component</h1>
+  </>)
+}
+
+export default App;
+//////////
+import React from "react";
+import First from "./First";
+
+class NApp extends React.Component {
+    render() {
+        return (<>
+            <h1>New Entry Point!</h1>
+            <br />
+            <First />
+        </>)
+    }
+}
+
+export default NApp;
+/////
+import React from "react";
+
+class First extends React.Component {
+    render() {
+        return (<>
+            <h1>Class component from external file!</h1>
+        </>)
+    }
+
+
+}
+
+export default First;
+
+///////////////
+.astyle{
+  background-color: #282c34;
+  color: aquamarine;
+  border: 2px;
+  border-radius: 5px;
+  text-align: center;
+}
+///////
+import React from "react";
+import './App.css';
+
+class First extends React.Component {
+    render() {
+        var mystyle = {
+            backgroundColor: 'red',
+            color: 'yellow',
+            border: '3px'
+        }
+        return (<>
+            <h1 style={mystyle}>Class component from external file!</h1>
+            <br />
+            <h2 className="astyle">This is style from style sheet</h2>
+
+        </>)
+    }
+}
+
+export default First;
+////////
+function Third(props) {
+    let a = true;
+    return (<>
+        <table border={1}>
+            {
+                ['Einstein', 'Ramanujam', 'Bohr', 'Schroediger', 'Bose']
+                    .map(n => <tr><td>{n}</td></tr>)
+            }
+        </table><br />
+        {
+            a ? 'Managed True' : 'Unamanged False'
+        }
+    </>)
+}
+
+export default Third;
+////////
+import React, { Component } from 'react';
+
+export default class Four extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            a: 'Hai Iam State',
+            b: 1009,
+            c: true,
+            d: { id: 1008, name: 'satish' },
+            e: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+        }
+    }
+    componentDidMount() {
+        this.setState({ a: 'Rubidium pentoxide' });
+        this.setState({ b: 1999 });
+        this.setState({ c: false });
+        let obj = { id: 2001, name: 'Bharat Bhushan' };
+        this.setState({ d: obj });
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+        this.setState({ e: arr });
+    }
+    render() {
+        return (
+            <>
+                <h1>{this.state.a}</h1><br />
+                <h2>{this.state.b}</h2><br />
+                <h3>{this.state.c ? 'Hai there iam true' : 'False'}</h3><br />
+                <h1>{JSON.stringify(this.state.d)}</h1>
+                <ul style={{ backgroundColor: 'black', color: 'white' }}>{
+                    this.state.e.map(n => <li>{n}</li>)
+                }</ul>
+            </>
+        );
+    }
+}
+///////
+import { useEffect, useState } from "react";
+
+function Five(props) {
+    const [a, SetA] = useState("Hi iam string");
+    const [b, SetB] = useState(1009);
+    const [c, SetC] = useState(false);
+    const [d, SetD] = useState({ id: 9898, name: 'satish' });
+    const [e, SetE] = useState(['a', 'e', 'i', 'o', 'u']);
+    useEffect(() => {
+        SetB(3232);
+        SetA('Gemini');
+        SetC(true);
+        SetD({ id: 4343, name: 'Kepler' });
+        SetE(['Maths', 'Physics', 'Chemistry', 'Zoology', 'Botany']);
+    }, []);
+    return (<>
+        <h1>{a}</h1><br />
+        <h2>{b}</h2><br />
+        <h1>{c ? 'Its true' : 'Its false'}</h1>
+        <br />
+        <h1>{JSON.stringify(d)}</h1><br />
+        <table border={2}>
+            {
+                e.map(n => <tr><td>{n}</td><td>({n.toUpperCase()})</td></tr>)
+            }
+
+        </table>
+
+    </>)
+
+}
+
+export default Five;
+////////
+import React from "react";
+import BClass from "./BClass";
+
+class AClass extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            a: 'This is value from parent',
+            b: { id: 1009, name: 'Gaekwad', email: 'gaek@mumbai.com' },
+            c: [21, 22, 23, 24, 25]
+        }
+    }
+    render() {
+        return (<>
+            <h1 style={{ backgroundColor: 'aquamarine', color: 'rebeccapurple' }}>This is parent </h1>
+            <br />
+            <BClass abc={this.state.a} b={this.state.b} c={this.state.c} />
+        </>)
+    }
+}
+
+export default AClass;
+///////
+import React from "react";
+
+class BClass extends React.Component {
+    render() {
+        return (<>
+            <p>Child area</p>
+            <h1 style={{ backgroundColor: 'aliceblue', color: 'tomato' }}>
+                {this.props.abc}
+            </h1>
+            <br />
+            <h2 style={{ backgroundColor: 'aliceblue', color: 'tomato' }}>
+                {JSON.stringify(this.props.b)}
+            </h2>
+            <select>
+                {
+                    this.props.c.map(n => <option>{n}</option>)
+                }
+            </select>
+        </>)
+    }
+}
+
+export default BClass;
+///////
+function CClass(props) {
+    return (<>
+        <b>Child class Functional</b><br />
+        <h1 style={{ backgroundColor: 'burlywood', color: 'cadetblue' }}>
+            {props.a}
+        </h1>
+        <h1 style={{ backgroundColor: 'burlywood', color: 'cadetblue' }}>
+            {JSON.stringify(props.b)}
+        </h1>
+        <h1 style={{ backgroundColor: 'burlywood', color: 'cadetblue' }}>
+            {JSON.stringify(props.c)}
+        </h1>
+    </>)
+}
+
+export default CClass;
+/////
+import React from "react";
+import First from "./First";
+import Sec from "./Sec";
+import Third from "./Third";
+import Four from "./Four";
+import Five from "./Five";
+import AClass from "./AClass";
+
+class NApp extends React.Component {
+    render() {
+        return (<>
+            <h1>New Entry Point!</h1>
+            {/* <br />
+            <First />
+            <br />
+            <Sec />
+            <br />
+            <Third /> */}
+            {/* <Four /> */}
+            {/* <Five /> */}
+            <AClass />
+            {
+                this.props.a.map(n => <p>{n}</p>)
+            }
+
+        </>)
+    }
+}
+
+export default NApp;
+//////
+export default function DClass(props) {
+    return (<>
+        <h1 style={{ backgroundColor: 'black', color: 'yellow' }}>
+            {props.a}
+        </h1>
+        <p>{JSON.stringify(props.b)}</p>
+    </>)
+}
+///////
+import { computeHeadingLevel } from "@testing-library/react";
+import React from "react";
+
+class EveCls extends React.Component {
+    render() {
+        return (<>
+            <button value="Germanium" onClick={(e) => {
+                alert(e.target.value)
+            }}>Send</button>
+            <br />
+            <input type="text" onChange={(e) => {
+                console.log(e.target.value)
+            }} />
+            <br />
+            <select onChange={(e) => alert(e.target.value)}>
+                <option value="Radium">Radium</option>
+                <option value="Uranium">Uranium</option>
+                <option value="Cobalt">Cobalt</option>
+                <option value="Lithium">Lithium</option>
+            </select><br />
+            <input type="radio" onChange={(e) => console.log(e.target.value)} value="Male" name="rd" />Male
+            <input type="radio" onChange={(e) => console.log(e.target.value)} value="Female" name="rd" />Female
+            <br />
+            <input type="checkbox" value="Vegan" onChange={(e) => console.log(e.target.value)} />Vegan
+        </>)
+    }
+}
+
+export default EveCls;
+///////////
+import React from "react";
+import LogComp from "./LogComp";
+import RootComp from "./RootComp";
+import PowComp from "./PowComp";
+
+class NumComp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            num: 0
+        }
+    }
+    render() {
+        return (<>
+            <select onChange={(e) => this.setState({ num: e.target.value })}>
+                {
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        .map(n => <option value={n}>{n}</option>)
+                }
+            </select><br />
+            <h1>Child Area:-</h1><br />
+            <table>
+                <tr><td><LogComp num={this.state.num} /></td></tr>
+                <tr><td><RootComp num={this.state.num} /></td></tr>
+                <tr><td><PowComp num={this.state.num} /></td></tr>
+            </table>
+        </>)
+    }
+}
+
+export default NumComp;
+//////////
+const LogComp = (props) => {
+    return (<>
+        <h1 style={{ backgroundColor: 'gray', color: 'azure' }}>
+            Log({props.num})={Math.log(props.num)}
+        </h1>
+    </>)
+}
+
+export default LogComp;
+/////
+function RootComp(props) {
+    return (<>
+        <h1 style={{ backgroundColor: 'black', color: 'azure' }}>
+            Sqrt({props.num})={Math.sqrt(props.num)}
+        </h1>
+    </>)
+}
+
+export default RootComp;
+//////
+function PowComp(props) {
+    return (<>
+        <h1 style={{ backgroundColor: 'yellow', color: 'royalblue' }}>
+            Pow({props.num},2)={Math.pow(props.num, 2)}
+        </h1>
+    </>)
+}
+
+export default PowComp;
+/////////
+import { useState } from "react";
+
+function Secform(props) {
+    const [id, SetId] = useState(0);
+    const [name, SetName] = useState("");
+    const [email, SetEmail] = useState("");
+    const [mobile, SetMobile] = useState("");
+    return (<>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            var person = { id: id, name: name, email: email, mobile: mobile };
+            alert(JSON.stringify(person));
+        }}>
+            <center><table style={{ backgroundColor: 'gray', color: 'wheat', border: '2px' }}>
+                <thead><tr><th></th><th></th></tr></thead>
+                <tbody>
+                    <tr><td>Id</td><td><input type="number" placeholder="enter id" name="id" onChange={(e) => SetId(Number.parseInt(e.target.value))} /></td></tr>
+                    <tr><td>Name</td><td><input type="text" placeholder="enter name" name="name" onChange={(e) => SetName(e.target.value)} /></td></tr>
+                    <tr><td>Email</td><td><input type="text" placeholder="enter email" name="email" onChange={(e) => SetEmail(e.target.value)} /></td></tr>
+                    <tr><td>Mobile</td><td><input type="text" placeholder="enter mobile" name="mobile" onChange={(e) => SetMobile(e.target.value)} /></td></tr>
+                    <tr><td><input type="submit" value="Send" /> </td><td><input type="reset" value="Cancel" /></td></tr>
+                </tbody>
+            </table></center>
+        </form>
+    </>)
+}
+
+export default Secform;
+/////
+import { useState } from "react";
+
+function FirstForm(props) {
+    const [id, SetId] = useState(0);
+    const [name, SetName] = useState("");
+    const [email, SetEmail] = useState("");
+    const [mobile, SetMobile] = useState("");
+
+    return (<>
+        <form method="post" action="http://localhost:3005/p_post">
+            <center><table style={{ backgroundColor: 'gray', color: 'wheat', border: '2px' }}>
+                <thead><tr><th></th><th></th></tr></thead>
+                <tbody>
+                    <tr><td>Id</td><td><input type="number" placeholder="enter id" name="id" onChange={(e) => SetId(Number.parseInt(e.target.value))} /></td></tr>
+                    <tr><td>Name</td><td><input type="text" placeholder="enter name" name="name" onChange={(e) => SetName(e.target.value)} /></td></tr>
+                    <tr><td>Email</td><td><input type="text" placeholder="enter email" name="email" onChange={(e) => SetEmail(e.target.value)} /></td></tr>
+                    <tr><td>Mobile</td><td><input type="text" placeholder="enter mobile" name="mobile" onChange={(e) => SetMobile(e.target.value)} /></td></tr>
+                    <tr><td><input type="submit" value="Send" /> </td><td><input type="reset" value="Cancel" /></td></tr>
+                </tbody>
+            </table></center>
+        </form>
+    </>)
+}
+
+export default FirstForm;
+///////
+https://jsonplaceholder.typicode.com/todos
+////
+import React from "react";
+
+class ServeComp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        }
+    }
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(a => a.json())
+            .then(b => this.setState({ data: b }));
+    }
+
+    render() {
+        return (<>
+            {
+                this.state.data.map(n => <> <div className="card" key={n.id} style={{ width: '18rem' }}>
+                    <div className="card-body">
+                        <h5 className="card-title">{n.id}</h5>
+                        <h6 className="card-subtitle mb-2 text-muted">Employee {n.id}</h6>
+                        <p className="card-text">{n.title}</p>
+                        <a href="#" className="card-link">Contact Employee</a>
+                        <a href="#" className="card-link">Follow Employee</a>
+                    </div>
+                </div><br /><hr /><br /></>)
+            }
+        </>)
+    }
+}
+
+export default ServeComp;
+////////
+https://api.sampleapis.com/coffee/hot
+////////////////
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+
+//////////////////12-02.2024//////
+import React from "react";
+import SecComp from "./SecComp";
+
+class FirstComp extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            a: '', b: ''
+        }
+        this.setA = this.setA.bind(this);
+        this.setB = this.setB.bind(this);
+    }
+
+    setA(e) {
+        this.setState({ a: e.target.value })
+    }
+
+    setB(e) {
+        this.setState({ b: e.target.value })
+    }
+
+    render() {
+        return (<>
+            <h1>Parent Area</h1><br />
+            The value coming from child is:{this.state.b}
+            <br />
+            <button onClick={(e) => { this.setA(e) }} value={"Rod Stewart"}>Set Value</button>
+            <br />
+            <h1>Child Area</h1><br />
+            <SecComp a={this.state.a} eve={this.setB} />
+        </>)
+    }
+
+
+
+}
+
+export default FirstComp;
+//////
+import React from "react";
+
+class SecComp extends React.Component {
+
+    render() {
+        return (<><br />
+            The value coming from parent is:{this.props.a}
+            <br />
+            <button onClick={(e) => { this.props.eve(e) }} value="Einstein">Send to parent</button>
+        </>)
+    }
+}
+
+export default SecComp;
+////////////
+import React from "react";
+
+class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { fav: 'red' }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ fav: "blue" })
+        }, 5000);
+    }
+
+    getSnapshotBeforeUpdate(prevprops, prevstate) {
+        console.log("Get snapshot called!");
+        console.log(prevstate.fav);
+        return null;
+    }
+
+    componentDidUpdate() {
+        console.log("Component did update called");
+        console.log(this.state.fav);
+    }
+
+    render() {
+        return (<>
+            <h1 style={{ backgroundColor: this.state.fav }}>Favorite color is : {this.state.fav}</h1>
+        </>)
+    }
+
+}
+
+export default Header;
+//////////
+import React from "react";
+
+var newdata = {
+    data: "This is some data from HOC in child...."
+}
+
+var myHoc = ComposedComponent => class extends React.Component {
+    componentDidMount() {
+        this.setState({ data: newdata.data });
+    }
+    render() {
+        return (<ComposedComponent {...this.props} {...this.state} />)
+    }
+}
+
+class MyComponent extends React.Component {
+    render() {
+        return (<>
+            <h1>{this.props.data}</h1>
+        </>)
+    }
+}
+
+export default myHoc(MyComponent);
+/////////////
+<div id="portal"></div>
+//////////////
+import React from "react";
+import * as ReactDOM from 'react-dom';
+
+const portalRoot = document.getElementById("portal");
+
+class Portal extends React.Component {
+    constructor() {
+        super();
+        this.el = document.createElement("div");
+    }
+    componentDidMount() {
+        portalRoot.appendChild(this.el);
+    }
+    componentWillUnmount() {
+        portalRoot.removeChild(this.el);
+    }
+    render() {
+        const { children } = this.props;
+        return ReactDOM.createPortal(children, this.el);
+    }
+}
+
+export default Portal;
+/////////
+import React from "react";
+import Portal from "./Portal";
+
+class PortalTest extends React.Component {
+    state = {
+        on: false
+    }
+    toggle = () => {
+        this.setState({ on: !this.state.on });
+    }
+    render() {
+        const { on } = this.state;
+        return (<>
+            <header>
+                <h1>Welcome to React Portals</h1>
+            </header>
+            <React.Fragment>
+                <button onClick={this.toggle}>Toggle Portal</button>
+                <br />
+                <Portal>
+                    {
+                        on ? <h1>This is a portal</h1> : null
+                    }
+                </Portal>
+            </React.Fragment>
+        </>)
+    }
+}
+
+export default PortalTest;
+////
+https://www.transfernow.net/dl/20240212a0qMf7yi/iyuOEzij
+///////////////
+
+let fullfilled = false;
+let promise = null;
+
+const useTimeout = (ms) => {
+    if (!fullfilled) {
+        throw promise || new Promise((res) => {
+            setTimeout(() => {
+                fullfilled = true;
+                res();
+            }, ms);
+        })
+    }
+}
+
+const Main = () => {
+    useTimeout(5000);
+    return <div>Component Loaded....</div>
+}
+
+export default Main;
+
+/////////
+  <Suspense fallback={"Loading...."}>
+                <Main />
+            </Suspense>
+///////////
+
